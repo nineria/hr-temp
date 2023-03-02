@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  gap: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 50px;
+}
+
+.button-container .button-left {
+  border: 2px solid #005fbc;
+  border-radius: 8px;
+  padding: 0.4rem;
+  color: #005fbc;
+  background-color: #fff;
+  width: 100%;
+  cursor: pointer;
+}
+.button-container .button-right {
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  color: #fff;
+  background: linear-gradient(
+    270.74deg,
+    #2e3579 0.35%,
+    #005fbc 99.1%,
+    #005fbc 99.1%
+  );
+  border-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.text-center {
+  text-align: center;
+  font-size: medium;
+  font-weight: 700;
+}

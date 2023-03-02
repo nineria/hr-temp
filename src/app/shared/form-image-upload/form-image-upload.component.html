@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="text-center">{{ formTitle }}</div>
+  <form>
+    <app-input-form></app-input-form>
+    <app-dropdown-select header="แผนกที่สมัคร"></app-dropdown-select>
+    <app-dropdown-select header="ผู้รับผิดชอบ"></app-dropdown-select>
+    <app-document-upload></app-document-upload>
+    <app-input-other-form
+      header="ข้อมูลเพิ่มเติม หรือ ลิงก์ผลงาน"
+    ></app-input-other-form>
+    <div class="button-container">
+      <button class="button-left">ยกเลิก</button>
+      <button class="button-right" type="submit">ยืนยัน</button>
+    </div>
+  </form>
+</div>

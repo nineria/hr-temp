@@ -1,0 +1,22 @@
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-wrapper input {
+  border: 1px solid #005fbc;
+  border-radius: 8px;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+.input-wrapper label {
+  font-weight: 700;
+  font-size: small;
+}
