@@ -14,9 +14,15 @@
   border-radius: 8px;
   padding: 8px;
   margin-top: 5px;
+  outline: none;
 }
 
 .input-wrapper label {
   font-weight: 700;
+  font-size: small;
+}
+
+.invalid-feedback {
+  color: #ec2222;
   font-size: small;
 }

@@ -1,0 +1,72 @@
+<form id="input-group-form" [formGroup]="addResumeForm" class="input-container">
+  <div class="input-wrapper">
+    <label for="name">ชื่อ </label>
+    <input
+      id="name"
+      placeholder="กรอกชื่อ"
+      type="text"
+      formControlName="name"
+    />
+    <div *ngIf="getResumeForm['name'].errors" class="invalid-feedback">
+      <div *ngIf="getResumeForm['name'].hasError('required')">
+        กรุณากรอกชื่อ
+      </div>
+      <div *ngIf="getResumeForm['name'].hasError('pattern')">ห้ามเว้นวรรค</div>
+    </div>
+  </div>
+
+  <div class="input-wrapper">
+    <label for="surname">นามสกุล</label>
+    <input placeholder="กรอกนามสกุล" type="text" formControlName="surname" />
+    <div *ngIf="getResumeForm['surname'].errors" class="invalid-feedback">
+      <div *ngIf="getResumeForm['surname'].hasError('required')">
+        กรุณากรอกนามสกุล
+      </div>
+      <div *ngIf="getResumeForm['surname'].hasError('pattern')">
+        ห้ามเว้นวรรค
+      </div>
+    </div>
+  </div>
+  <div class="input-wrapper">
+    <label for="nickname">ชื่อเล่น</label>
+    <input placeholder="กรอกชื่อเล่น" type="text" formControlName="nickname" />
+    <div *ngIf="getResumeForm['nickname'].errors" class="invalid-feedback">
+      <div *ngIf="getResumeForm['nickname'].hasError('required')">
+        กรุณากรอกชื่อเล่น
+      </div>
+      <div *ngIf="getResumeForm['nickname'].hasError('pattern')">
+        ห้ามเว้นวรรค
+      </div>
+    </div>
+  </div>
+
+  <div class="input-wrapper">
+    <label for="phoneNumber">เบอร์โทรศัพท์</label>
+    <input
+      placeholder="กรอกเบอร์โทรศัพท์"
+      type="number"
+      formControlName="phoneNumber"
+    />
+    <div *ngIf="getResumeForm['phoneNumber'].errors" class="invalid-feedback">
+      <div *ngIf="getResumeForm['phoneNumber'].hasError('required')">
+        กรุณากรอกเบอร์โทรศัพท์
+      </div>
+      <div *ngIf="getResumeForm['phoneNumber'].hasError('pattern')">
+        ห้ามเว้นวรรค
+      </div>
+    </div>
+  </div>
+  <div class="input-wrapper">
+    <label for="email">อีเมล</label>
+    <input placeholder="กรอกอีเมล" type="email" formControlName="email" />
+    <div *ngIf="getResumeForm['email'].errors" class="invalid-feedback">
+      <div *ngIf="getResumeForm['email'].hasError('required')">
+        กรุณากรอกอีเมล
+      </div>
+      <div *ngIf="getResumeForm['email'].hasError('email')">
+        กรุณากรอกอีเมลให้ถูกต้อง
+      </div>
+      <div *ngIf="getResumeForm['email'].hasError('pattern')">ห้ามเว้นวรรค</div>
+    </div>
+  </div>
+</form>

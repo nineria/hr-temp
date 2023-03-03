@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="text-center">{{ formTitle }}</div>
+  <form class="form-container">
+    <app-input-form
+      [addResumeForm]="addResumeForm"
+      [getResumeForm]="getResumeForm"
+    ></app-input-form>
+    <app-multi-select
+      multiSelectTitle="แผนกที่สมัคร"
+      placeholder="เลือกแผนกที่สมัคร"
+      [list]="departmentList"
+      (onSubmit)="onSubmit($event)"
+    ></app-multi-select>
+    <app-multi-select
+      multiSelectTitle="ตำแหน่ง"
+      placeholder="เลือกตำแหน่ง"
+      [list]="positionList"
+      (onSubmit)="onSubmit($event)"
+    ></app-multi-select>
+    <app-multi-select
+      multiSelectTitle="ผู้รับผิดชอบ"
+      placeholder="เลือกผู้รับผิดชอบ"
+      [list]="officerInChargeList"
+      (onSubmit)="onSubmit($event)"
+    ></app-multi-select>
+    <app-document-upload></app-document-upload>
+    <app-input-other-form
+      header="ข้อมูลเพิ่มเติม หรือ ลิงก์ผลงาน"
+      [addResumeForm]="addResumeForm"
+      [getResumeForm]="getResumeForm"
+    ></app-input-other-form>
+    <div class="button-container">
+      <button class="button-left">ยกเลิก</button>
+      <button
+        id="input-group-form"
+        class="button-right"
+        type="submit"
+        (click)="onFormSubmit($event)"
+      >
+        ยืนยัน
+      </button>
+    </div>
+  </form>
+</div>

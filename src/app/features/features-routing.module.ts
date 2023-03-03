@@ -5,12 +5,14 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./features/features.module').then((m) => m.FeaturesModule),
+      import('./form-file-upload/form-file-upload.module').then(
+        (m) => m.FormFileUploadModule
+      ),
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class FeaturesRoutingModule {}

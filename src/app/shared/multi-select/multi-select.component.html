@@ -1,0 +1,56 @@
+<div class="multi-select-container">
+  <div>
+    {{ multiSelectTitle }}
+    <span *ngIf="this.selectedList.length === 0" class="required">*</span>
+  </div>
+  <div class="multi-select-wrapper">
+    <input
+      (keyup)="onSearch()"
+      [(ngModel)]="searchText"
+      type="text"
+      [placeholder]="placeholder"
+    />
+    <button (click)="onShowAll($event)">
+      <div [class]="this.toggle ? 'rotate-180-deg' : 'rotate-0-deg'">V</div>
+    </button>
+    <div
+      *ngIf="filteredList.length > 0 && this.toggle"
+      class="multi-select-item-wrapper"
+    >
+      <li
+        *ngFor="let member of filteredList"
+        (click)="onSelect(member)"
+        class="multi-select-item"
+      >
+        {{ member.name }}
+      </li>
+    </div>
+  </div>
+
+  <div
+    class="selected-item-container"
+    (cdkDropListDropped)="onDrop($event)"
+    cdkDropList
+  >
+    <div
+      cdkDrag
+      *ngFor="let member of selectedList; let i = index"
+      [cdkDragDisabled]="!dragAndDrop"
+      class="selected-item-wrapper"
+    >
+      <div *cdkDragPlaceholder class="selected-item-placeholder"></div>
+      <div [class]="hasInput ? 'selected-item' : 'selected-item-no-input'">
+        <div>
+          {{ member.name }}
+        </div>
+        <input
+          *ngIf="hasInput"
+          type="text"
+          placeholder="กรอกเลขรหัสอุปกรณ์"
+          [(ngModel)]="member.inputValue"
+        />
+        <button (click)="onRemove(i)">X</button>
+      </div>
+    </div>
+  </div>
+</div>
