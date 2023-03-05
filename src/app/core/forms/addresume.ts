@@ -1,29 +1,25 @@
-import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 export const addResumeForm = () => {
   return new FormGroup({
     name: new FormControl('', {
-      validators: [Validators.required, Validators.pattern("[^' ']+")],
+      validators: [Validators.required],
       updateOn: 'change',
     }),
     surname: new FormControl('', {
-      validators: [Validators.required, Validators.pattern("[^' ']+")],
+      validators: [Validators.required],
       updateOn: 'change',
     }),
     nickname: new FormControl('', {
-      validators: [Validators.required, Validators.pattern("[^' ']+")],
+      validators: [Validators.required],
       updateOn: 'change',
     }),
     phoneNumber: new FormControl('', {
-      validators: [Validators.required, Validators.pattern("[^' ']+")],
+      validators: [Validators.required],
       updateOn: 'change',
     }),
     email: new FormControl('', {
-      validators: [
-        Validators.required,
-        Validators.email,
-        Validators.pattern("[^' ']+"),
-      ],
+      validators: [Validators.required, Validators.email],
       updateOn: 'change',
     }),
     other: new FormControl('', {

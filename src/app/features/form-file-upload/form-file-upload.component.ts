@@ -69,7 +69,9 @@ export class FormFileUploadComponent implements OnInit {
   onFormSubmit(event: MouseEvent) {
     event.preventDefault();
 
-    if (this.addResumeForm.invalid) return;
+    if (this.addResumeForm.invalid) {
+      return;
+    }
 
     console.log(this.addResumeForm.value);
   }

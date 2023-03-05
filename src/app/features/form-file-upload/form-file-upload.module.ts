@@ -6,7 +6,7 @@ import { DocumentUploadComponent } from './document-upload/document-upload.compo
 import { DropdownSelectComponent } from './dropdown-select/dropdown-select.component';
 
 import { FormFileUploadRoutingModule } from './form-file-upload-routing.module';
-import { FormFileUploadComponent } from './form-file-upload/form-file-upload.component';
+import { FormFileUploadComponent } from './form-file-upload.component';
 import { InputFormComponent } from './input-form/input-form.component';
 import { InputOtherFormComponent } from './input-other-form/input-other-form.component';
 

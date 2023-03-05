@@ -30,15 +30,9 @@
       [getResumeForm]="getResumeForm"
     ></app-input-other-form>
     <div class="button-container">
-      <button class="button-left">ยกเลิก</button>
-      <button
-        id="input-group-form"
-        class="button-right"
-        type="submit"
-        (click)="onFormSubmit($event)"
-      >
-        ยืนยัน
-      </button>
+      <app-button label="ยกเลิก" variant="cancel"/>
+      <app-button label="ยืนยัน" variant="submit" type="submit" id="input-group-form" (click)="onFormSubmit($event)" [disabled]="addResumeForm.invalid"/>
     </div>
   </form>
 </div>
+

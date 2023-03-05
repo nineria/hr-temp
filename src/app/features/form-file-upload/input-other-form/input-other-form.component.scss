@@ -9,6 +9,9 @@ textarea {
   border: 1px solid #005fbc;
   box-sizing: border-box;
   margin-top: 5px;
+  min-height: 80px;
+  height: fit-content;
+  outline: none;
 }
 
 .header {

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FormFileUploadComponent } from './form-file-upload/form-file-upload.component';
+import { FormFileUploadComponent } from './form-file-upload.component';
 
 const routes: Routes = [
   {

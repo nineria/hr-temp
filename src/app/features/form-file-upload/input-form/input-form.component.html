@@ -1,72 +1,145 @@
 <form id="input-group-form" [formGroup]="addResumeForm" class="input-container">
   <div class="input-wrapper">
-    <label for="name">ชื่อ </label>
+    <label for="name"
+      >ชื่อ
+      <span *ngIf="getResumeForm['name'].invalid" class="required">*</span>
+    </label>
     <input
       id="name"
       placeholder="กรอกชื่อ"
       type="text"
       formControlName="name"
+      class="input"
+      [ngClass]="
+        getResumeForm['name'].invalid &&
+        (getResumeForm['name'].touched || getResumeForm['name'].dirty) &&
+        'invalid'
+      "
     />
-    <div *ngIf="getResumeForm['name'].errors" class="invalid-feedback">
-      <div *ngIf="getResumeForm['name'].hasError('required')">
-        กรุณากรอกชื่อ
-      </div>
-      <div *ngIf="getResumeForm['name'].hasError('pattern')">ห้ามเว้นวรรค</div>
+    <div
+      *ngIf="
+        getResumeForm['name'].errors &&
+        (getResumeForm['name'].touched || getResumeForm['name'].dirty)
+      "
+      class="required"
+    >
+      <div>กรุณากรอกข้อมูล</div>
     </div>
   </div>
 
   <div class="input-wrapper">
-    <label for="surname">นามสกุล</label>
-    <input placeholder="กรอกนามสกุล" type="text" formControlName="surname" />
-    <div *ngIf="getResumeForm['surname'].errors" class="invalid-feedback">
-      <div *ngIf="getResumeForm['surname'].hasError('required')">
-        กรุณากรอกนามสกุล
-      </div>
-      <div *ngIf="getResumeForm['surname'].hasError('pattern')">
-        ห้ามเว้นวรรค
-      </div>
+    <label for="surname"
+      >นามสกุล
+      <span *ngIf="getResumeForm['surname'].invalid" class="required">*</span>
+    </label>
+    <input
+      placeholder="กรอกนามสกุล"
+      type="text"
+      formControlName="surname"
+      class="input"
+      [ngClass]="
+        getResumeForm['surname'].invalid &&
+        (getResumeForm['surname'].touched || getResumeForm['surname'].dirty) &&
+        'invalid'
+      "
+    />
+    <div
+      *ngIf="
+        getResumeForm['surname'].errors &&
+        (getResumeForm['surname'].touched || getResumeForm['surname'].dirty)
+      "
+      class="required"
+    >
+      <div>กรุณากรอกข้อมูล</div>
     </div>
   </div>
   <div class="input-wrapper">
-    <label for="nickname">ชื่อเล่น</label>
-    <input placeholder="กรอกชื่อเล่น" type="text" formControlName="nickname" />
-    <div *ngIf="getResumeForm['nickname'].errors" class="invalid-feedback">
-      <div *ngIf="getResumeForm['nickname'].hasError('required')">
-        กรุณากรอกชื่อเล่น
-      </div>
-      <div *ngIf="getResumeForm['nickname'].hasError('pattern')">
-        ห้ามเว้นวรรค
-      </div>
+    <label for="nickname"
+      >ชื่อเล่น
+      <span *ngIf="getResumeForm['nickname'].invalid" class="required">*</span>
+    </label>
+    <input
+      placeholder="กรอกชื่อเล่น"
+      type="text"
+      formControlName="nickname"
+      class="input"
+      [ngClass]="
+        getResumeForm['nickname'].invalid &&
+        (getResumeForm['nickname'].touched ||
+          getResumeForm['nickname'].dirty) &&
+        'invalid'
+      "
+    />
+    <div
+      *ngIf="
+        getResumeForm['nickname'].errors &&
+        (getResumeForm['nickname'].touched || getResumeForm['nickname'].dirty)
+      "
+      class="required"
+    >
+      <div>กรุณากรอกข้อมูล</div>
     </div>
   </div>
 
   <div class="input-wrapper">
-    <label for="phoneNumber">เบอร์โทรศัพท์</label>
+    <label for="phoneNumber"
+      >เบอร์โทรศัพท์
+      <span *ngIf="getResumeForm['phoneNumber'].invalid" class="required"
+        >*</span
+      >
+    </label>
     <input
       placeholder="กรอกเบอร์โทรศัพท์"
       type="number"
       formControlName="phoneNumber"
+      class="input"
+      [ngClass]="
+        getResumeForm['phoneNumber'].invalid &&
+        (getResumeForm['phoneNumber'].touched ||
+          getResumeForm['phoneNumber'].dirty) &&
+        'invalid'
+      "
     />
-    <div *ngIf="getResumeForm['phoneNumber'].errors" class="invalid-feedback">
-      <div *ngIf="getResumeForm['phoneNumber'].hasError('required')">
-        กรุณากรอกเบอร์โทรศัพท์
-      </div>
-      <div *ngIf="getResumeForm['phoneNumber'].hasError('pattern')">
-        ห้ามเว้นวรรค
-      </div>
+    <div
+      *ngIf="
+        getResumeForm['phoneNumber'].errors &&
+        (getResumeForm['phoneNumber'].touched ||
+          getResumeForm['phoneNumber'].dirty)
+      "
+      class="required"
+    >
+      <div>กรุณากรอกข้อมูล</div>
     </div>
   </div>
   <div class="input-wrapper">
-    <label for="email">อีเมล</label>
-    <input placeholder="กรอกอีเมล" type="email" formControlName="email" />
-    <div *ngIf="getResumeForm['email'].errors" class="invalid-feedback">
+    <label for="email"
+      >อีเมล
+      <span *ngIf="getResumeForm['email'].invalid" class="required">*</span>
+    </label>
+    <input
+      placeholder="กรอกอีเมล"
+      type="email"
+      formControlName="email"
+      class="input"
+      [ngClass]="
+        getResumeForm['email'].invalid &&
+        (getResumeForm['email'].touched || getResumeForm['email'].dirty) &&
+        'invalid'
+      "
+    />
+    <div
+      *ngIf="
+        getResumeForm['email'].errors &&
+        (getResumeForm['email'].touched || getResumeForm['email'].dirty)
+      "
+      class="required"
+    >
       <div *ngIf="getResumeForm['email'].hasError('required')">
-        กรุณากรอกอีเมล
+        กรุณากรอกข้อมูล
       </div>
       <div *ngIf="getResumeForm['email'].hasError('email')">
-        กรุณากรอกอีเมลให้ถูกต้อง
+        กรุณากรอกข้อมูลให้ถูกต้อง
       </div>
-      <div *ngIf="getResumeForm['email'].hasError('pattern')">ห้ามเว้นวรรค</div>
     </div>
   </div>
 </form>

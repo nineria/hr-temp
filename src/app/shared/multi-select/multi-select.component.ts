@@ -40,6 +40,8 @@ export class MultiSelectComponent implements OnInit {
 
   toggle: boolean = false;
 
+  empty: boolean = false;
+
   constructor() {}
 
   ngOnInit(): void {}
@@ -50,6 +52,7 @@ export class MultiSelectComponent implements OnInit {
 
   onRemove(i: number): void {
     if (this.selectedList.length < 0) return;
+
     // remove member from array by index
     let tempSelectedList: MultiSelect[] = this.selectedList;
     tempSelectedList.splice(i, 1);
@@ -60,6 +63,9 @@ export class MultiSelectComponent implements OnInit {
       type: this.multiSelectTitle,
       data: this.selectedList,
     });
+
+    if (tempSelectedList.length == 0) this.empty = true;
+    else this.empty = false;
   }
 
   onSearch(): void {
@@ -84,6 +90,7 @@ export class MultiSelectComponent implements OnInit {
   }
 
   onSelect(selected: MultiSelect): void {
+    this.empty = false;
     // update selected member array
     this.selectedList.push(selected);
     //clear default value

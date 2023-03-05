@@ -9,7 +9,7 @@
   flex-direction: column;
 }
 
-.input-wrapper input {
+.input {
   border: 1px solid #005fbc;
   border-radius: 8px;
   padding: 8px;
@@ -22,7 +22,16 @@
   font-size: small;
 }
 
-.invalid-feedback {
-  color: #ec2222;
+.required {
+  color: #ef0303;
   font-size: small;
+  font-weight: 400;
+}
+
+.invalid {
+  border: 1px solid #ef0303;
+  border-radius: 8px;
+  padding: 8px;
+  margin-top: 5px;
+  outline: none;
 }
