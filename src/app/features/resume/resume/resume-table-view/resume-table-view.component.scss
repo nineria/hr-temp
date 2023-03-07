@@ -1,0 +1,29 @@
+.mat-sort-header-container {
+  align-items: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr,
+th {
+  padding: 10px;
+  background: #005fbc;
+  color: #fff;
+  border-bottom: 2px solid #ccc;
+  font-weight: 600;
+}
+
+tr {
+  text-align: center;
+  background-color: #fff;
+}
+
+tr,
+td {
+  padding: 10px;
+  color: #000;
+  font-weight: 400;
+}

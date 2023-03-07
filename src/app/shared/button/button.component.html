@@ -1,1 +1,9 @@
-<button [class]="variant" [disabled]="disabled">{{ label }}</button>
+<div *ngIf="size === 'sm'">
+  <button [class]="variant + '-sm'" [disabled]="disabled">{{ label }}</button>
+</div>
+<div *ngIf="size === 'md'">
+  <button [class]="variant" [disabled]="disabled">{{ label }}</button>
+</div>
+<div *ngIf="size === 'lg'">
+  <button [class]="variant + '-lg'" [disabled]="disabled">{{ label }}</button>
+</div>

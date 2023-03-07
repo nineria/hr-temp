@@ -9,19 +9,19 @@
       multiSelectTitle="แผนกที่สมัคร"
       placeholder="เลือกแผนกที่สมัคร"
       [list]="departmentList"
-      (onSubmit)="onSubmit($event)"
+      (onSubmit)="onSelect($event)"
     ></app-multi-select>
     <app-multi-select
       multiSelectTitle="ตำแหน่ง"
       placeholder="เลือกตำแหน่ง"
       [list]="positionList"
-      (onSubmit)="onSubmit($event)"
+      (onSubmit)="onSelect($event)"
     ></app-multi-select>
     <app-multi-select
       multiSelectTitle="ผู้รับผิดชอบ"
       placeholder="เลือกผู้รับผิดชอบ"
       [list]="officerInChargeList"
-      (onSubmit)="onSubmit($event)"
+      (onSubmit)="onSelect($event)"
     ></app-multi-select>
     <app-document-upload></app-document-upload>
     <app-input-other-form
@@ -30,9 +30,15 @@
       [getResumeForm]="getResumeForm"
     ></app-input-other-form>
     <div class="button-container">
-      <app-button label="ยกเลิก" variant="cancel"/>
-      <app-button label="ยืนยัน" variant="submit" type="submit" id="input-group-form" (click)="onFormSubmit($event)" [disabled]="addResumeForm.invalid"/>
+      <app-button label="ยกเลิก" variant="cancel" />
+      <app-button
+        label="ยืนยัน"
+        variant="submit"
+        type="submit"
+        id="input-group-form"
+        (click)="onFormSubmit($event)"
+        [disabled]="addResumeForm.invalid"
+      />
     </div>
   </form>
 </div>
-

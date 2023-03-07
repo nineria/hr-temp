@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ResumeAddComponent } from './resume-add/resume-add.component';
+import { ResumeComponent } from './resume/resume.component';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'resume',
+    component: ResumeComponent,
   },
   {
-    path: 'resume',
-    loadChildren: () =>
-      import('./resume/resume.module').then((m) => m.ResumeModule),
+    path: 'add',
+    component: ResumeAddComponent,
   },
 ];
 
@@ -18,4 +19,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class FeaturesRoutingModule {}
+export class ResumeRoutingModule {}

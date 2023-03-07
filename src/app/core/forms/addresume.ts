@@ -37,5 +37,9 @@ export const addResumeForm = () => {
       validators: [Validators.required],
       updateOn: 'change',
     }),
+    createdAt: new FormControl(),
+    updatedAt: new FormControl(),
+    status: new FormControl(),
+    averageScore: new FormControl(),
   });
 };

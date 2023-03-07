@@ -20,4 +20,7 @@ export class ButtonComponent {
 
   @Input()
   variant: string = 'default';
+
+  @Input()
+  size: string = 'md';
 }
