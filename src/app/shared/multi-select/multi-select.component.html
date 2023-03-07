@@ -13,7 +13,11 @@
       [ngClass]="empty ? 'invalid' : ''"
     />
     <button (click)="onShowAll($event)">
-      <div [class]="toggle ? 'rotate-180-deg' : 'rotate-0-deg'">V</div>
+      <img
+        src="assets/icons/dropdown.png"
+        alt="assets/icons/dropdown.png"
+        [class]="toggle ? 'rotate-180-deg' : 'rotate-0-deg'"
+      />
     </button>
     <div
       *ngIf="filteredList.length > 0 && toggle"
@@ -54,7 +58,9 @@
           placeholder="กรอกเลขรหัสอุปกรณ์"
           [(ngModel)]="member.inputValue"
         />
-        <button (click)="onRemove(i)">X</button>
+        <button (click)="onRemove(i)">
+          <img src="assets/icons/dropdown-x.png" alt="" />
+        </button>
       </div>
     </div>
   </div>
