@@ -9,6 +9,7 @@
       multiSelectTitle="แผนกที่สมัคร"
       placeholder="เลือกแผนกที่สมัคร"
       [list]="departmentList"
+      [selectedList]="departmentList"
       (onSubmit)="onSelect($event)"
     ></app-multi-select>
     <app-multi-select
@@ -23,14 +24,18 @@
       [list]="officerInChargeList"
       (onSubmit)="onSelect($event)"
     ></app-multi-select>
-    <app-document-upload></app-document-upload>
+    <!-- DO NOT FORGET TO IMPLEMENT THIS -->
+    <app-document-upload
+    [getForm]="getResumeForm"
+    [submitted]="submitted"
+    ></app-document-upload>
     <app-input-other-form
       header="ข้อมูลเพิ่มเติม หรือ ลิงก์ผลงาน"
       [addResumeForm]="addResumeForm"
       [getResumeForm]="getResumeForm"
     ></app-input-other-form>
     <div class="button-container">
-      <app-button label="ยกเลิก" variant="cancel" />
+      <app-button label="ยกเลิก" variant="cancel"  />
       <app-button
         label="ยืนยัน"
         variant="submit"
