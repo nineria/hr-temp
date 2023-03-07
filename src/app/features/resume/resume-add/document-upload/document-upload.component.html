@@ -1,3 +1,48 @@
 <div class="container">
-  <div>{{ header }}</div>
+  <div class="header">
+    {{ header }}
+    <span *ngIf="getForm['file'].invalid" class="required">*</span>
+  </div>
+  <div class="file-wrapper">
+    <input
+      *ngIf="!file"
+      class="file-input"
+      type="file"
+      accept=""
+      (change)="onSelectFile($event)"
+    />
+    <div *ngIf="!file" [ngClass]="submitted ? 'dropzone-invalid' : 'dropzone'">
+      <img src="assets/icons/upload-file.png" alt="" />
+      <div>ลากและวางไฟล์ที่นี่ หรือคลิกเพื่ออัปโหลด</div>
+      <div *ngIf="!file && isSelectedFile" class="required-error">
+        <div>กรุณาอัปโหลดเอกสาร</div>
+      </div>
+    </div>
+    <div *ngIf="file" class="file-preview">
+      <div>
+        <img [src]="fileThumbnail || 'http://placehold.it/50'" alt="" />
+        <div>{{ file.name || "ไม่พบไฟล์ ลองใหม่อีกครั้ง" }}</div>
+      </div>
+      <img
+        class="file-remove"
+        src="assets/icons/file-remove.png"
+        alt=""
+        (click)="onClearFile()"
+      />
+    </div>
+  </div>
+  <div class="button-wrapper">
+    <input
+      *ngIf="!file"
+      class="file-button"
+      type="file"
+      accept=""
+      (change)="onSelectFile($event)"
+    />
+    <app-button
+      label="เพิ่มเอกสาร"
+      variant="submit"
+      padding="10px 30px"
+    ></app-button>
+  </div>
 </div>
