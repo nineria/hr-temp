@@ -16,14 +16,14 @@
   <div class="tab-container">
     <div *ngIf="tabTitle">
       <!-- ResumeInprogress -->
-      <app-resume-table-view
+      <app-table-view
         tableTitle="รายการ Resume"
         [table]="tableMockup"
-      ></app-resume-table-view>
+      ></app-table-view>
     </div>
     <div *ngIf="!tabTitle">
       <!-- ResumeFinished -->
-      <!-- <app-resume-table-view></app-resume-table-view> -->
+      <app-table-view tableTitle="รายการ Resume" [table]="[]"></app-table-view>
     </div>
   </div>
 </div>

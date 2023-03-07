@@ -1,0 +1,141 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.head-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table-container {
+  margin-top: 15px;
+}
+
+.title {
+  font-size: large;
+  font-weight: 600;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.average-score {
+  background-color: #ffefd7;
+  color: #eb760b;
+  display: inline-block;
+  font-weight: 600;
+  font-size: small;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+.avatar {
+  width: 32px;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
+.other-menu {
+  border: 1px solid #d1d1d6;
+  border-radius: 8px;
+  width: 12px;
+  height: 12px;
+  padding: 10px;
+  color: #005fbc;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  overflow: hidden;
+}
+
+thead {
+  padding: 10px;
+  background: #005fbc;
+  color: #fff;
+  border-bottom: 2px solid #ccc;
+  font-weight: 600;
+}
+
+th:first-child {
+  border-top-left-radius: 10px;
+  padding: 10px;
+}
+
+th:last-child {
+  border-top-right-radius: 10px;
+  padding: 10px;
+}
+
+tbody {
+  border: 2px solid #ccc;
+}
+
+tbody,
+tr {
+  text-align: center;
+  background-color: #fff;
+}
+
+td {
+  padding: 10px;
+  color: #000;
+  font-weight: 400;
+}
+
+::ng-deep .mat-sort-header-arrow[style] {
+  // Hide default arrow stem
+  .mat-sort-header-stem {
+    display: none;
+  }
+  .mat-sort-header-indicator {
+    opacity: 1;
+    color: black;
+    font-weight: bold;
+
+    // Hide default arrow as its composed of left, right and middle
+    .mat-sort-header-pointer-left,
+    .mat-sort-header-pointer-right,
+    .mat-sort-header-pointer-middle {
+      display: none;
+    }
+  }
+}
+
+// My custom ascending arrow
+[aria-sort="ascending"] {
+  ::ng-deep .mat-sort-header-arrow {
+    .mat-sort-header-indicator {
+      &::before {
+        content: url("/assets/icons/arrow-down.png");
+        // content: "\2193";
+        top: -2px;
+        left: 10px;
+        position: absolute;
+      }
+    }
+  }
+}
+
+// My custom descending arrow
+[aria-sort="descending"] {
+  ::ng-deep .mat-sort-header-arrow {
+    .mat-sort-header-indicator {
+      &::before {
+        content: url("/assets/icons/arrow-up.png");
+        bottom: -10px;
+        left: 10px;
+        position: absolute;
+      }
+    }
+  }
+}

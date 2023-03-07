@@ -19,8 +19,8 @@ export class ResumeComponent implements OnInit {
         phoneNumber: 123456789,
         email: '123@kalaland.com',
         other: '',
-        status: 'รอรีวิว',
-        averageScore: '5.0/5.0',
+        status: 'รอสัมภาษณ์',
+        averageScore: '4.0/5.0',
 
         departmentList: [
           {
@@ -94,12 +94,12 @@ export class ResumeComponent implements OnInit {
         email: '123@kalaland.com',
         other: '',
         status: 'รอรีวิว',
-        averageScore: '5.0/5.0',
+        averageScore: '1.0/5.0',
 
         departmentList: [
           {
             id: 1,
-            name: 'Developer',
+            name: 'Marketing',
           },
         ],
         positionList: [

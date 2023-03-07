@@ -10,11 +10,11 @@ export interface Dessert {
 }
 
 @Component({
-  selector: 'app-resume-table-view',
-  templateUrl: './resume-table-view.component.html',
-  styleUrls: ['./resume-table-view.component.scss'],
+  selector: 'app-table-view',
+  templateUrl: './table-view.component.html',
+  styleUrls: ['./table-view.component.scss'],
 })
-export class ResumeTableViewComponent implements OnInit {
+export class TableViewComponent implements OnInit {
   @Input()
   tableTitle: string = '';
 
@@ -27,8 +27,6 @@ export class ResumeTableViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.sortedTable = this.table.slice();
-
-    console.log(this.table);
   }
 
   sortData(sort: Sort) {
@@ -57,6 +55,35 @@ export class ResumeTableViewComponent implements OnInit {
           return 0;
       }
     });
+  }
+
+  onFilteredSelect(event: any) {
+    const tmpTableList = this.table;
+    const filterList = event.filter((e: any) => e.isSelected === true);
+    const newTableList = [];
+
+    if (filterList.length < 1) {
+      this.sortedTable = this.table.slice();
+      return;
+    }
+
+    for (let i = 0; i < tmpTableList.length; i++) {
+      for (let j = 0; j < filterList.length; j++) {
+        if (tmpTableList[i].departmentList[0].name === filterList[j].name) {
+          newTableList.push(tmpTableList[i]);
+        }
+      }
+    }
+
+    // tmp.map((item, i: number) => {
+    //   filter.map((item: any, j: number) => {
+    //     if (tmp[i].departmentList[0].name === filter[j].name) {
+    //       newArr.push(tmp[i]);
+    //     }
+    //   });
+    // });
+
+    this.sortedTable = newTableList;
   }
 
   localDate(number: number, local: string) {
