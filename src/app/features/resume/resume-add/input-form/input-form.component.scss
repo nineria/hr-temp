@@ -18,13 +18,18 @@
 }
 
 .input-wrapper label {
-  font-weight: 700;
-  font-size: small;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.input-wrapper input {
+  font-size: 14px;
+  padding: 14px;
 }
 
 .required {
   color: #ef0303;
-  font-size: small;
+  font-size: 14px;
   font-weight: 400;
 }
 

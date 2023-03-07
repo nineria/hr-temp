@@ -2,13 +2,13 @@
   background-color: #fff;
   outline: none;
   border: 1px solid #fff;
-  height: 48px;
-  padding: 12px 16px;
+
   border: 1px solid #005fbc;
   border-radius: 8px;
   color: #005fbc;
   cursor: pointer;
-  width: 220px;
+  font-size: 14px;
+  width: 100%;
 }
 
 .submit {
@@ -20,38 +20,18 @@
   );
   outline: none;
   border: 1px solid #fff;
-  height: 48px;
-  padding: 12px 16px;
   border: 1px solid transparent;
   border-radius: 8px;
   color: #fff;
+  font-size: 14px;
   cursor: pointer;
-  width: 220px;
-}
-
-.submit-sm {
-  background: linear-gradient(
-    270.74deg,
-    #2e3579 0.35%,
-    #005fbc 99.1%,
-    #005fbc 99.1%
-  );
-
-  outline: none;
-  border: 1px solid #fff;
-  border: 1px solid transparent;
-  border-radius: 8px;
-
-  padding: 12px 32px;
-  color: #fff;
-  cursor: pointer;
+  width: 100%;
 }
 
 .default {
   cursor: pointer;
   background-color: #fff;
   outline: none;
+  font-size: 14px;
   border: 1px solid #fff;
-  height: 48px;
-  padding: 12px 16px;
 }

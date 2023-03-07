@@ -1,6 +1,6 @@
 .header {
   font-weight: 700;
-  font-size: small;
+  font-size: 14px;
 }
 
 .multi-select-container {
@@ -21,29 +21,35 @@
 }
 
 .multiselect-input {
-  padding: 0.5rem;
   width: 100%;
 
+  font-size: 14px;
+  padding: 14px;
+
   border-right: none;
-  border-left: 1px solid #3b82f6;
-  border-top: 1px solid #3b82f6;
-  border-bottom: 1px solid #3b82f6;
-  border-top-left-radius: 0.375rem;
-  border-bottom-left-radius: 0.375rem;
+  border-left: 1px solid #005fbc;
+  border-top: 1px solid #005fbc;
+  border-bottom: 1px solid #005fbc;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .multiselect-input:focus {
   outline: none;
-  border-top-left-radius: 0.375rem;
-  border-bottom-left-radius: 0.375rem;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .multi-select-wrapper button {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  background-color: #3b82f6;
-  border-top-right-radius: 0.375rem;
-  border-bottom-right-radius: 0.375rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 56px;
+
+  background-color: #005fbc;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -73,11 +79,11 @@
 
 .multi-select-item-wrapper {
   position: absolute;
-  top: 30px;
+  top: 45px;
   z-index: 10;
 
-  border-radius: 0.375rem;
-  border: 1px solid #3b82f6;
+  border-radius: 10px;
+  border: 1px solid #005fbc;
 
   background-color: #fff;
 
@@ -96,7 +102,7 @@
 }
 
 .multi-select-item:hover {
-  background-color: #3b82f6;
+  background-color: #005fbc;
   color: #fff;
 }
 
@@ -123,33 +129,39 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: 48px;
 }
 
 .selected-item div {
   padding: 0.5rem;
   width: 100%;
 
-  border-top: 1px solid #3b82f6;
-  border-bottom: 1px solid #3b82f6;
-  border-left: 1px solid #3b82f6;
+  border-top: 1px solid #005fbc;
+  border-bottom: 1px solid #005fbc;
+  border-left: 1px solid #005fbc;
 
   background-color: #fff;
 
-  border-top-left-radius: 0.375rem;
-  border-bottom-left-radius: 0.375rem;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .selected-item-no-input div {
-  padding: 0.5rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
   width: 100%;
 
-  border-top: 1px solid #3b82f6;
-  border-bottom: 1px solid #3b82f6;
-  border-left: 1px solid #3b82f6;
+  font-size: 14px;
+  padding-left: 14px;
+
+  border-top: 1px solid #005fbc;
+  border-bottom: 1px solid #005fbc;
+  border-left: 1px solid #005fbc;
   background-color: #fff;
 
-  border-top-left-radius: 0.375rem;
-  border-bottom-left-radius: 0.375rem;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .selected-item div:focus {
@@ -158,14 +170,20 @@
 }
 
 .selected-item input {
+  display: flex;
+  justify-content: start;
+  align-items: center;
   cursor: text;
 
   border-right: none;
-  border-top: 1px solid #3b82f6;
-  border-bottom: 1px solid #3b82f6;
-  border-left: 1px solid #3b82f6;
+  border-top: 1px solid #005fbc;
+  border-bottom: 1px solid #005fbc;
+  border-left: 1px solid #005fbc;
 
-  padding-left: 0.5rem;
+  width: 100%;
+
+  font-size: 14px;
+  padding-left: 14px;
 }
 
 .selected-item input:focus {
@@ -174,12 +192,17 @@
 
 .selected-item button,
 .selected-item-no-input button {
-  padding: 0.5rem 1rem 0.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   background-color: #ec5555;
 
+  width: 56px;
+
   border: none;
-  border-top-right-radius: 0.375rem;
-  border-bottom-right-radius: 0.375rem;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 
   color: #fff;
   cursor: pointer;
@@ -192,7 +215,7 @@
 .selected-item-placeholder {
   background: #ccc;
   border: dotted 3px #999;
-  border-radius: 0.375rem;
+  border-radius: 10px;
 
   height: 43px;
   width: 100%;
@@ -203,13 +226,13 @@
 }
 
 .submit-button {
-  background-color: #3b82f6;
+  background-color: #005fbc;
   color: #fff;
 
   padding: 0.5rem;
   margin-top: 0.5rem;
 
-  border-radius: 0.375rem;
+  border-radius: 10px;
 }
 
 .submit-button:hover {
@@ -223,7 +246,8 @@
 
 .required {
   color: #ec2222;
-  font-size: small;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .invalid {
@@ -233,6 +257,6 @@
 
   background-color: #fff;
 
-  border-top-left-radius: 0.375rem;
-  border-bottom-left-radius: 0.375rem;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
