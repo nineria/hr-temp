@@ -12,6 +12,7 @@ import { ResumeComponent } from './resume/resume.component';
 import { MatSortModule } from '@angular/material/sort';
 import { SearchFilterComponent } from './resume/search-filter/search-filter.component';
 import { InputFormComponent } from './resume-add/input-form/input-form.component';
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { InputFormComponent } from './resume-add/input-form/input-form.component
     ResumeRoutingModule,
     MatSortModule,
     FormsModule,
+    NgbTooltipModule,
   ],
 })
 export class ResumeModule {}

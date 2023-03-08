@@ -7,6 +7,7 @@
     <div class="button-wrapper">
       <app-search-filter
         (filteredList)="onFilteredSelect($event)"
+        (searchChange)="onSearchChange($event)"
       ></app-search-filter>
       <app-button
         routerLink="add"
@@ -39,13 +40,23 @@
             {{ row.status }}
           </div>
         </td>
-        <td>
-          <img
-            *ngFor="let member of row.managerList"
-            [src]="member.avatar"
-            alt="image"
-            class="avatar"
-          />
+        <td style="display: flex; flex-direction: row">
+          <div *ngFor="let member of row.managerList">
+            <ng-template #tipContent>
+              <div style="text-align: center">
+                <div>{{ member.name }}</div>
+                <div style="font-size: 10px; color: #c7c7cc">
+                  {{ member.position }}
+                </div>
+              </div>
+            </ng-template>
+            <img
+              [src]="member.avatar"
+              alt="image"
+              class="avatar"
+              [ngbTooltip]="tipContent"
+            />
+          </div>
         </td>
         <td>
           <div class="average-score">

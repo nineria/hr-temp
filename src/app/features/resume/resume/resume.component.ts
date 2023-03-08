@@ -21,7 +21,6 @@ export class ResumeComponent implements OnInit {
         other: '',
         status: 'รอสัมภาษณ์',
         averageScore: '4.0/5.0',
-
         departmentList: [
           {
             id: 1,
@@ -39,11 +38,13 @@ export class ResumeComponent implements OnInit {
             id: 4,
             name: 'นิธินัย เหินเวหา',
             avatar: 'https://www.w3schools.com/howto/img_avatar.png',
+            position: 'CEO',
           },
           {
             id: 1,
             name: 'สงวน ลิขสิทธิ์',
             avatar: 'https://www.w3schools.com/howto/img_avatar.png',
+            position: 'manager',
           },
         ],
         createdAt: 1678179449539,
