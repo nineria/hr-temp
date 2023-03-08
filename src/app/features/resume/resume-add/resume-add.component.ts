@@ -4,6 +4,7 @@ import { departmentList } from 'src/app/core/constants/departmentList';
 import { managerList } from 'src/app/core/constants/managerList';
 import { positionList } from 'src/app/core/constants/positionList';
 import { addResumeForm } from 'src/app/core/forms/addresume';
+import { ManagerList } from 'src/app/core/interfaces/managerList';
 import { MultiSelect } from 'src/app/core/interfaces/MultiSelect';
 
 @Component({
@@ -16,7 +17,7 @@ export class ResumeAddComponent {
 
   departmentList: MultiSelect[] = [];
   positionList: MultiSelect[] = [];
-  managerList: MultiSelect[] = [];
+  managerList: ManagerList[] = [];
 
   form: FormGroup = addResumeForm();
 
