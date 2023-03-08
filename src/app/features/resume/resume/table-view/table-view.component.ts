@@ -89,6 +89,7 @@ export class TableViewComponent implements OnInit {
     this.sortedTable = this.table.filter(
       (row) =>
         row.name.toLocaleLowerCase().includes(event.toLocaleLowerCase()) ||
+        row.surname.toLocaleLowerCase().includes(event.toLocaleLowerCase()) ||
         row.departmentList[0].name
           .toLocaleLowerCase()
           .includes(event.toLocaleLowerCase()) ||
