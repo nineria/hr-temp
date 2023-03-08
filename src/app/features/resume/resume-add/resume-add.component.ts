@@ -17,8 +17,6 @@ export class ResumeAddComponent {
 
   addResumeForm: FormGroup = addResumeForm();
 
-  submitted: boolean = false;
-
   constructor() {}
 
   get getResumeForm() {
@@ -100,19 +98,22 @@ export class ResumeAddComponent {
     }
   }
 
+  onSelectFile(event: any): void {
+    console.log(event);
+
+    this.addResumeForm.get('file')?.setValue(event);
+    console.log(this.addResumeForm.value);
+  }
+
   onFormSubmit(event: MouseEvent) {
     event.preventDefault();
-    this.submitted = true;
 
     this.addResumeForm.get('createdAt')?.setValue(Date.now());
     this.addResumeForm.get('updatedAt')?.setValue(Date.now());
     this.addResumeForm.get('status')?.setValue('รอรีวิว');
     this.addResumeForm.get('averageScore')?.setValue('5.0/5.0');
 
-    if (this.addResumeForm.invalid) {
-      this.submitted = false;
-      return;
-    }
+    if (this.addResumeForm.invalid) return;
 
     console.log(this.addResumeForm.value);
   }

@@ -5,6 +5,7 @@
   border: 1px solid #005fbc;
   border-radius: 10px;
   position: relative;
+  z-index: 3;
 }
 
 .search-box {
@@ -49,7 +50,7 @@
 
 .button-wrapper {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   gap: 10px;
 }
 
@@ -68,7 +69,7 @@
 .checkbox {
   display: flex;
   flex-direction: row;
-  align-items: end;
+  align-items: flex-end;
   gap: 10px;
 }
 

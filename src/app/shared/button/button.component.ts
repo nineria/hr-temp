@@ -10,7 +10,7 @@ export class ButtonComponent implements OnInit {
   label: string = '';
 
   @Input()
-  disabled: boolean = false;
+  disabled: boolean | string = false;
 
   @Input()
   type: string = '';
@@ -53,6 +53,18 @@ export class ButtonComponent implements OnInit {
         break;
       default:
         this.rounded = `border-radius: ${this.rounded};`;
+        break;
+    }
+
+    switch (this.disabled) {
+      case true:
+        this.disabled = 'opacity: 0.7; cursor: not-allowed;';
+        break;
+      case false:
+        this.disabled = false;
+        break;
+      default:
+        this.disabled = this.disabled;
         break;
     }
   }

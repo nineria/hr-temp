@@ -9,7 +9,6 @@
       multiSelectTitle="แผนกที่สมัคร"
       placeholder="เลือกแผนกที่สมัคร"
       [list]="departmentList"
-      [selectedList]="departmentList"
       (onSubmit)="onSelect($event)"
     ></app-multi-select>
     <app-multi-select
@@ -26,8 +25,8 @@
     ></app-multi-select>
     <!-- DO NOT FORGET TO IMPLEMENT THIS -->
     <app-document-upload
-    [getForm]="getResumeForm"
-    [submitted]="submitted"
+      [getForm]="getResumeForm"
+      (onSelectFileEmit)="onSelectFile($event)"
     ></app-document-upload>
     <app-input-other-form
       header="ข้อมูลเพิ่มเติม หรือ ลิงก์ผลงาน"

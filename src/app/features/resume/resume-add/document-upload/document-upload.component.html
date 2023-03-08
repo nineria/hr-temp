@@ -5,23 +5,26 @@
   </div>
   <div class="file-wrapper">
     <input
-      *ngIf="!file"
+      *ngIf="!fileName"
       class="file-input"
       type="file"
       accept=""
       (change)="onSelectFile($event)"
     />
-    <div *ngIf="!file" [ngClass]="submitted ? 'dropzone-invalid' : 'dropzone'">
+    <div
+      *ngIf="!fileName"
+      [ngClass]="isSelectedFile ? 'dropzone-invalid' : 'dropzone'"
+    >
       <img src="assets/icons/upload-file.png" alt="" />
       <div>ลากและวางไฟล์ที่นี่ หรือคลิกเพื่ออัปโหลด</div>
-      <div *ngIf="!file && isSelectedFile" class="required-error">
+      <div *ngIf="!fileName && isSelectedFile" class="required-error">
         <div>กรุณาอัปโหลดเอกสาร</div>
       </div>
     </div>
-    <div *ngIf="file" class="file-preview">
+    <div *ngIf="fileName" class="file-preview">
       <div>
         <img [src]="fileThumbnail || 'http://placehold.it/50'" alt="" />
-        <div>{{ file.name || "ไม่พบไฟล์ ลองใหม่อีกครั้ง" }}</div>
+        <div>{{ fileName || "ไม่พบไฟล์ ลองใหม่อีกครั้ง" }}</div>
       </div>
       <img
         class="file-remove"
@@ -33,7 +36,7 @@
   </div>
   <div class="button-wrapper">
     <input
-      *ngIf="!file"
+      *ngIf="!fileName"
       class="file-button"
       type="file"
       accept=""

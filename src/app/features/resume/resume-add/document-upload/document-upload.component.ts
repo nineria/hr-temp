@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-document-upload',
@@ -8,14 +8,17 @@ import { Component, Input, OnInit } from '@angular/core';
 export class DocumentUploadComponent implements OnInit {
   header: string = 'อัพโหลดเอกสาร';
   loading: boolean = false;
-  file: File | undefined;
-  fileThumbnail!: string | ArrayBuffer | null;
+
+  fileName: string = '';
+  fileThumbnail: string = '';
 
   @Input()
   getForm: any = [];
 
-  @Input()
-  submitted!: boolean;
+  file: File | undefined;
+
+  @Output()
+  onSelectFileEmit: EventEmitter<any> = new EventEmitter<any>();
 
   isSelectedFile: boolean = false;
 
@@ -25,21 +28,27 @@ export class DocumentUploadComponent implements OnInit {
 
   onSelectFile(event: any): void {
     this.isSelectedFile = false;
-    this.file = event.target.files[0];
+    const file: File = event.target.files[0];
+
+    if (!file) return;
 
     const reader = new FileReader();
-    reader.onload = (e) => (this.fileThumbnail = reader.result);
 
-    reader.readAsDataURL(this.file!);
+    reader.readAsDataURL(file);
+    reader.onload = (_event) => {
+      this.fileThumbnail = reader.result as string;
+    };
 
-    this.fileThumbnail = URL.createObjectURL(event.target.files[0]);
-    console.log('this.file', URL.createObjectURL(event.target.files[0]));
+    this.fileName = file.name;
+    this.onSelectFileEmit.emit(file);
 
     event.target.value = '';
   }
 
   onClearFile(): void {
-    this.file = undefined;
+    this.fileName = '';
+    this.fileThumbnail = '';
     this.isSelectedFile = true;
+    this.onSelectFileEmit.emit();
   }
 }
