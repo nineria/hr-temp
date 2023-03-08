@@ -148,7 +148,7 @@
 
 .selected-item-no-input div {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
 
@@ -171,7 +171,7 @@
 
 .selected-item input {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   cursor: text;
 

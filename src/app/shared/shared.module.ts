@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSortModule } from '@angular/material/sort';
 import { ButtonComponent } from './button/button.component';
 import { MultiSelectComponent } from './multi-select/multi-select.component';
+
 @NgModule({
   declarations: [MultiSelectComponent, ButtonComponent],
   imports: [
