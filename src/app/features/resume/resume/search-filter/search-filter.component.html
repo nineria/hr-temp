@@ -6,7 +6,12 @@
       width="20px"
       height="20px"
     />
-    <input type="text" placeholder="ค้นหา" />
+    <input
+      type="text"
+      placeholder="ค้นหา"
+      [(ngModel)]="searchText"
+      (ngModelChange)="onSearchChange()"
+    />
   </div>
   <div class="filter" (click)="toggle = !toggle">
     <div>Filter</div>
@@ -21,14 +26,6 @@
     <div>
       <div class="checkbox-wrapper">
         <div class="title">หมวดหมู่</div>
-        <!-- <form class="checkbox" *ngFor="let item of filterList">
-          <input
-            [id]="item.name"
-            type="checkbox"
-            [formControlName]="item.name"
-          />
-          <label [for]="item.name">{{ item.name }}</label>
-        </form> -->
         <form>
           <div class="checkbox-wrapper">
             <div

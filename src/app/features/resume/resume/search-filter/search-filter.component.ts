@@ -14,8 +14,13 @@ export class SearchFilterComponent implements OnInit {
 
   filterList: any[] = [];
 
+  searchText: string = '';
+
   @Output()
   filteredList: EventEmitter<any[]> = new EventEmitter<any[]>();
+
+  @Output()
+  searchChange: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() {}
 
@@ -45,7 +50,11 @@ export class SearchFilterComponent implements OnInit {
     return this.filterForm.controls;
   }
 
-  async onCheckClick() {
+  onSearchChange(): void {
+    this.searchChange.emit(this.searchText);
+  }
+
+  onCheckClick(): void {
     this.filteredList.emit(this.form['filter'].value);
   }
 }
