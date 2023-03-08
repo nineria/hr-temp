@@ -1,17 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap");
+
 html,
 body {
   height: 100%;
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-.font-custom-select {
-  font-family: "Kanit";
-  outline: 0px !important;
-  border-radius: 10px;
+  // font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Kanit", sans-serif;
 }
 
 /* Importing Bootstrap SCSS file. */
-@import "bootstrap/scss/bootstrap";
+// @import "bootstrap/scss/bootstrap";
