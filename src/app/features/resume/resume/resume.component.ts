@@ -34,7 +34,7 @@ export class ResumeComponent implements OnInit {
             name: 'UX/UI',
           },
         ],
-        officerInChargeList: [
+        managerList: [
           {
             id: 4,
             name: 'นิธินัย เหินเวหา',
@@ -71,7 +71,7 @@ export class ResumeComponent implements OnInit {
             name: 'UX/UI',
           },
         ],
-        officerInChargeList: [
+        managerList: [
           {
             id: 4,
             name: 'นิธินัย เหินเวหา',
@@ -108,7 +108,7 @@ export class ResumeComponent implements OnInit {
             name: 'UX/UI',
           },
         ],
-        officerInChargeList: [
+        managerList: [
           {
             id: 4,
             name: 'นิธินัย เหินเวหา',

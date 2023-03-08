@@ -33,7 +33,7 @@ export const addResumeForm = () => {
       validators: [Validators.required],
       updateOn: 'change',
     }),
-    officerInChargeList: new FormControl([], {
+    managerList: new FormControl([], {
       validators: [Validators.required],
       updateOn: 'change',
     }),

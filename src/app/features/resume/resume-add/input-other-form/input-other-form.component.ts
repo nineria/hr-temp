@@ -10,8 +10,8 @@ export class InputOtherFormComponent {
   header: string = '';
 
   @Input()
-  addResumeForm: any;
+  form: any;
 
   @Input()
-  getResumeForm: any;
+  getForm: any;
 }

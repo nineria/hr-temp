@@ -1,8 +1,8 @@
-<form id="input-group-form" [formGroup]="addResumeForm" class="input-container">
+<form id="input-group-form" [formGroup]="form" class="input-container">
   <div class="input-wrapper">
     <label for="name"
       >ชื่อ
-      <span *ngIf="getResumeForm['name'].invalid" class="required">*</span>
+      <span *ngIf="getForm['name'].invalid" class="required">*</span>
     </label>
     <input
       id="name"
@@ -11,15 +11,15 @@
       formControlName="name"
       class="input"
       [ngClass]="
-        getResumeForm['name'].invalid &&
-        (getResumeForm['name'].touched || getResumeForm['name'].dirty) &&
+        getForm['name'].invalid &&
+        (getForm['name'].touched || getForm['name'].dirty) &&
         'invalid'
       "
     />
     <div
       *ngIf="
-        getResumeForm['name'].errors &&
-        (getResumeForm['name'].touched || getResumeForm['name'].dirty)
+        getForm['name'].errors &&
+        (getForm['name'].touched || getForm['name'].dirty)
       "
       class="required"
     >
@@ -30,7 +30,7 @@
   <div class="input-wrapper">
     <label for="surname"
       >นามสกุล
-      <span *ngIf="getResumeForm['surname'].invalid" class="required">*</span>
+      <span *ngIf="getForm['surname'].invalid" class="required">*</span>
     </label>
     <input
       placeholder="กรอกนามสกุล"
@@ -38,15 +38,15 @@
       formControlName="surname"
       class="input"
       [ngClass]="
-        getResumeForm['surname'].invalid &&
-        (getResumeForm['surname'].touched || getResumeForm['surname'].dirty) &&
+        getForm['surname'].invalid &&
+        (getForm['surname'].touched || getForm['surname'].dirty) &&
         'invalid'
       "
     />
     <div
       *ngIf="
-        getResumeForm['surname'].errors &&
-        (getResumeForm['surname'].touched || getResumeForm['surname'].dirty)
+        getForm['surname'].errors &&
+        (getForm['surname'].touched || getForm['surname'].dirty)
       "
       class="required"
     >
@@ -56,7 +56,7 @@
   <div class="input-wrapper">
     <label for="nickname"
       >ชื่อเล่น
-      <span *ngIf="getResumeForm['nickname'].invalid" class="required">*</span>
+      <span *ngIf="getForm['nickname'].invalid" class="required">*</span>
     </label>
     <input
       placeholder="กรอกชื่อเล่น"
@@ -64,16 +64,15 @@
       formControlName="nickname"
       class="input"
       [ngClass]="
-        getResumeForm['nickname'].invalid &&
-        (getResumeForm['nickname'].touched ||
-          getResumeForm['nickname'].dirty) &&
+        getForm['nickname'].invalid &&
+        (getForm['nickname'].touched || getForm['nickname'].dirty) &&
         'invalid'
       "
     />
     <div
       *ngIf="
-        getResumeForm['nickname'].errors &&
-        (getResumeForm['nickname'].touched || getResumeForm['nickname'].dirty)
+        getForm['nickname'].errors &&
+        (getForm['nickname'].touched || getForm['nickname'].dirty)
       "
       class="required"
     >
@@ -84,9 +83,7 @@
   <div class="input-wrapper">
     <label for="phoneNumber"
       >เบอร์โทรศัพท์
-      <span *ngIf="getResumeForm['phoneNumber'].invalid" class="required"
-        >*</span
-      >
+      <span *ngIf="getForm['phoneNumber'].invalid" class="required">*</span>
     </label>
     <input
       placeholder="กรอกเบอร์โทรศัพท์"
@@ -94,17 +91,15 @@
       formControlName="phoneNumber"
       class="input"
       [ngClass]="
-        getResumeForm['phoneNumber'].invalid &&
-        (getResumeForm['phoneNumber'].touched ||
-          getResumeForm['phoneNumber'].dirty) &&
+        getForm['phoneNumber'].invalid &&
+        (getForm['phoneNumber'].touched || getForm['phoneNumber'].dirty) &&
         'invalid'
       "
     />
     <div
       *ngIf="
-        getResumeForm['phoneNumber'].errors &&
-        (getResumeForm['phoneNumber'].touched ||
-          getResumeForm['phoneNumber'].dirty)
+        getForm['phoneNumber'].errors &&
+        (getForm['phoneNumber'].touched || getForm['phoneNumber'].dirty)
       "
       class="required"
     >
@@ -114,7 +109,7 @@
   <div class="input-wrapper">
     <label for="email"
       >อีเมล
-      <span *ngIf="getResumeForm['email'].invalid" class="required">*</span>
+      <span *ngIf="getForm['email'].invalid" class="required">*</span>
     </label>
     <input
       placeholder="กรอกอีเมล"
@@ -122,22 +117,20 @@
       formControlName="email"
       class="input"
       [ngClass]="
-        getResumeForm['email'].invalid &&
-        (getResumeForm['email'].touched || getResumeForm['email'].dirty) &&
+        getForm['email'].invalid &&
+        (getForm['email'].touched || getForm['email'].dirty) &&
         'invalid'
       "
     />
     <div
       *ngIf="
-        getResumeForm['email'].errors &&
-        (getResumeForm['email'].touched || getResumeForm['email'].dirty)
+        getForm['email'].errors &&
+        (getForm['email'].touched || getForm['email'].dirty)
       "
       class="required"
     >
-      <div *ngIf="getResumeForm['email'].hasError('required')">
-        กรุณากรอกข้อมูล
-      </div>
-      <div *ngIf="getResumeForm['email'].hasError('email')">
+      <div *ngIf="getForm['email'].hasError('required')">กรุณากรอกข้อมูล</div>
+      <div *ngIf="getForm['email'].hasError('email')">
         กรุณากรอกข้อมูลให้ถูกต้อง
       </div>
     </div>

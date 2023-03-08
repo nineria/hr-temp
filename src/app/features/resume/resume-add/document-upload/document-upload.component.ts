@@ -18,7 +18,9 @@ export class DocumentUploadComponent implements OnInit {
   getForm: any = [];
 
   @Output()
-  onSelectFileEmit: EventEmitter<any> = new EventEmitter<any>();
+  onSelectFileEmit: EventEmitter<File | undefined> = new EventEmitter<
+    File | undefined
+  >();
 
   isSelectedFile: boolean = false;
 

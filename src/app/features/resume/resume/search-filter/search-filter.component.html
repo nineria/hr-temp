@@ -40,7 +40,6 @@
                 [id]="filter.id"
                 [name]="filter.name"
                 [(ngModel)]="filter.isSelected"
-                (change)="onCheckClick()"
               />
               <label [for]="filter.id">{{ filter.name }}</label>
             </div>
@@ -56,12 +55,14 @@
           rounded="lg"
           (click)="toggle = false"
         ></app-button>
-        <app-button
-          variant="submit"
-          label="ตกลง"
-          padding="8px 50px"
-          rounded="lg"
-        ></app-button>
+        <div (click)="onCheckClick()">
+          <app-button
+            variant="submit"
+            label="ตกลง"
+            padding="8px 50px"
+            rounded="lg"
+          ></app-button>
+        </div>
       </div>
     </div>
   </div>

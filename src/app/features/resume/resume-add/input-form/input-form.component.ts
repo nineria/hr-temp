@@ -1,6 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { addResumeForm } from 'src/app/core/forms/addresume';
 
 @Component({
   selector: 'app-input-form',
@@ -9,8 +7,8 @@ import { addResumeForm } from 'src/app/core/forms/addresume';
 })
 export class InputFormComponent {
   @Input()
-  addResumeForm: any;
+  form: any;
 
   @Input()
-  getResumeForm: any;
+  getForm: any;
 }

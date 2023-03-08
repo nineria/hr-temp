@@ -2,8 +2,8 @@
   <div class="text-center">{{ formTitle }}</div>
   <form class="form-container">
     <app-input-form
-      [addResumeForm]="addResumeForm"
-      [getResumeForm]="getResumeForm"
+      [getForm]="getForm"
+      [form]="form"
     ></app-input-form>
     <app-multi-select
       multiSelectTitle="แผนกที่สมัคร"
@@ -20,18 +20,18 @@
     <app-multi-select
       multiSelectTitle="ผู้รับผิดชอบ"
       placeholder="เลือกผู้รับผิดชอบ"
-      [list]="officerInChargeList"
+      [list]="managerList"
       (onSubmit)="onSelect($event)"
     ></app-multi-select>
     <!-- DO NOT FORGET TO IMPLEMENT THIS -->
     <app-document-upload
-      [getForm]="getResumeForm"
+      [getForm]="getForm"
       (onSelectFileEmit)="onSelectFile($event)"
     ></app-document-upload>
     <app-input-other-form
       header="ข้อมูลเพิ่มเติม หรือ ลิงก์ผลงาน"
-      [addResumeForm]="addResumeForm"
-      [getResumeForm]="getResumeForm"
+      [form]="form"
+      [getForm]="getForm"
     ></app-input-other-form>
     <div class="button-container">
       <app-button label="ยกเลิก" variant="cancel"  />
@@ -41,7 +41,7 @@
         type="submit"
         id="input-group-form"
         (click)="onFormSubmit($event)"
-        [disabled]="addResumeForm.invalid"
+        [disabled]="form.invalid"
       />
     </div>
   </form>
