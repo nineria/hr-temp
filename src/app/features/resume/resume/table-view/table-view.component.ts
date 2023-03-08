@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Sort } from '@angular/material/sort';
+import { compare } from 'src/app/core/utils/compare';
 
 export interface Dessert {
   calories: number;
@@ -75,15 +76,24 @@ export class TableViewComponent implements OnInit {
       }
     }
 
-    // tmp.map((item, i: number) => {
-    //   filter.map((item: any, j: number) => {
-    //     if (tmp[i].departmentList[0].name === filter[j].name) {
-    //       newArr.push(tmp[i]);
-    //     }
-    //   });
-    // });
-
     this.sortedTable = newTableList;
+  }
+
+  onSearchChange(event: string) {
+    if (event == '') {
+      this.sortedTable = this.table;
+      return;
+    }
+
+    // filtered member contain only member that includes searchText
+    this.sortedTable = this.table.filter(
+      (row) =>
+        row.name.toLocaleLowerCase().includes(event.toLocaleLowerCase()) ||
+        row.departmentList[0].name
+          .toLocaleLowerCase()
+          .includes(event.toLocaleLowerCase()) ||
+        row.status.toLocaleLowerCase().includes(event.toLocaleLowerCase())
+    );
   }
 
   localDate(number: number, local: string) {
@@ -96,8 +106,4 @@ export class TableViewComponent implements OnInit {
 
     return result;
   }
-}
-
-function compare(a: number | string, b: number | string, isAsc: boolean) {
-  return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }
