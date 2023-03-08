@@ -12,10 +12,10 @@ export class DocumentUploadComponent implements OnInit {
   fileName: string = '';
   fileThumbnail: string = '';
 
+  file: File | undefined;
+
   @Input()
   getForm: any = [];
-
-  file: File | undefined;
 
   @Output()
   onSelectFileEmit: EventEmitter<any> = new EventEmitter<any>();
