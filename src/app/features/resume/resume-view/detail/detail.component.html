@@ -1,0 +1,32 @@
+<div class="card-container">
+  <div class="card-wrapper">
+    <div class="title">{{ userDetail.name }} {{ userDetail.surname }}</div>
+    <div class="status">{{ userDetail.status }}</div>
+  </div>
+  <div class="card-wrapper">
+    <div class="sub-title">
+      แผนก <span>{{ userDetail.departmentList[0].name }}</span>
+    </div>
+    <div class="sub-title">
+      ตำแหน่ง <span>{{ userDetail.positionList[0].name }}</span>
+    </div>
+  </div>
+  <div class="card-wrapper">
+    <div class="flex-table left">
+      <div *ngIf="userDetail.nickname">ชื่อเล่น :</div>
+      <div>อีเมล :</div>
+      <div>เบอร์โทรศัพท์ :</div>
+      <div *ngIf="userDetail.other">ข้อมูลเพิ่มเติม :</div>
+      <div>ข้อมูลโดย :</div>
+      <div>วันที่เพิ่มข้อมูล :</div>
+    </div>
+    <div class="flex-table right">
+      <div *ngIf="userDetail.nickname">{{ userDetail.nickname }}</div>
+      <div>{{ userDetail.email }}</div>
+      <div>{{ userDetail.phoneNumber }}</div>
+      <div *ngIf="userDetail.other">{{ userDetail.other }}</div>
+      <div>ข้อมูลโดย?</div>
+      <div>{{ formatLocalDate(userDetail.createdAt, "th-TH") }} น.</div>
+    </div>
+  </div>
+</div>

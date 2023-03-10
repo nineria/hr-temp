@@ -1,0 +1,20 @@
+<div class="card-container">
+  <div class="button-back-wrapper">
+    <div class="button-back" routerLink="/resume">
+      <img src="/assets/icons/back.png" alt="" />
+    </div>
+    <div class="button-edit">
+      <img src="/assets/icons/edit.png" alt="" />
+      <div>แก้ไขข้อมูล</div>
+    </div>
+  </div>
+  <div>
+    <!-- detail -->
+    <app-detail [userDetail]="userDetail"></app-detail>
+  </div>
+  <!-- tabs -->
+  <app-tabs></app-tabs>
+  <app-manager></app-manager>
+  <!-- manager in charge -->
+  <!-- buttons group -->
+</div>
