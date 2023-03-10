@@ -1,7 +1,14 @@
 <button
+  class="button"
   [class]="variant"
   [style]="padding + rounded + disabled"
   [disabled]="disabled"
 >
+  <img
+    *ngIf="leftIcon"
+    [src]="leftIcon"
+    [alt]="leftIcon"
+    style="margin-right: 10px; width: 20px"
+  />
   {{ label }}
 </button>

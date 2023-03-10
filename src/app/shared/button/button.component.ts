@@ -13,19 +13,22 @@ export class ButtonComponent implements OnInit {
   disabled: boolean | string = false;
 
   @Input()
-  type: string = '';
+  type: 'submit' | 'button' | 'cancel' = 'button';
 
   @Input()
   id: string = '';
 
   @Input()
-  variant: string = 'default';
+  variant: 'default' | 'submit' | 'cancel' = 'default';
 
   @Input()
   padding: string = '10px 15px';
 
   @Input()
   rounded: string = '10px';
+
+  @Input()
+  leftIcon: string = '';
 
   constructor() {}
 
@@ -35,7 +38,6 @@ export class ButtonComponent implements OnInit {
         this.padding = `padding: ${this.padding};`;
         break;
     }
-
     switch (this.rounded) {
       case 'sm':
         this.rounded = 'border-radius: 5px;';
@@ -55,7 +57,6 @@ export class ButtonComponent implements OnInit {
         this.rounded = `border-radius: ${this.rounded};`;
         break;
     }
-
     switch (this.disabled) {
       case true:
         this.disabled = 'opacity: 0.7; cursor: not-allowed;';
