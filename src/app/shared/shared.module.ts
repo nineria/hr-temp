@@ -5,9 +5,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSortModule } from '@angular/material/sort';
 import { ButtonComponent } from './button/button.component';
 import { MultiSelectComponent } from './multi-select/multi-select.component';
+import { ModalBasicComponent } from './modal-basic/modal-basic.component';
 
 @NgModule({
-  declarations: [MultiSelectComponent, ButtonComponent],
+  declarations: [MultiSelectComponent, ButtonComponent, ModalBasicComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -15,6 +16,6 @@ import { MultiSelectComponent } from './multi-select/multi-select.component';
     ReactiveFormsModule,
     MatSortModule,
   ],
-  exports: [MultiSelectComponent, ButtonComponent],
+  exports: [MultiSelectComponent, ButtonComponent, ModalBasicComponent],
 })
 export class SharedModule {}
