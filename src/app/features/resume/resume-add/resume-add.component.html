@@ -1,10 +1,7 @@
-<div class="container">
+<div class="card-container">
   <div class="text-center">{{ formTitle }}</div>
   <form class="form-container">
-    <app-input-form
-      [getForm]="getForm"
-      [form]="form"
-    ></app-input-form>
+    <app-input-form [getForm]="getForm" [form]="form"></app-input-form>
     <app-multi-select
       multiSelectTitle="แผนกที่สมัคร"
       placeholder="เลือกแผนกที่สมัคร"
@@ -34,15 +31,21 @@
       [getForm]="getForm"
     ></app-input-other-form>
     <div class="button-container">
-      <app-button label="ยกเลิก" variant="cancel"  />
-      <app-button
+      <app-modal-basic
+        modalTitle="ยกเลิกการส่งแบบฟอร์ม?"
+        type="cancel"
+        variant="cancel"
+        label="ยกเลิก"
+      ></app-modal-basic>
+      <app-modal-basic
+        [form]="form"
+        id="input-group-form"
+        modalTitle="ยืนยันการส่งแบบฟอร์ม?"
+        type="submit"
         label="ยืนยัน"
         variant="submit"
-        type="submit"
-        id="input-group-form"
-        (click)="onFormSubmit($event)"
-        [disabled]="form.invalid"
-      />
+        (onSubmit)="onFormSubmit()"
+      ></app-modal-basic>
     </div>
   </form>
 </div>

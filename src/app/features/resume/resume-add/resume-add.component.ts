@@ -57,9 +57,7 @@ export class ResumeAddComponent {
     this.form.get('file')?.setValue(event);
   }
 
-  onFormSubmit(event: MouseEvent) {
-    event.preventDefault();
-
+  onFormSubmit() {
     this.form.get('createdAt')?.setValue(Date.now());
     this.form.get('updatedAt')?.setValue(Date.now());
     this.form.get('status')?.setValue('รอรีวิว');
