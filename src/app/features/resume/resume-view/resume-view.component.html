@@ -13,8 +13,11 @@
     <app-detail [userDetail]="userDetail"></app-detail>
   </div>
   <!-- tabs -->
-  <app-tabs></app-tabs>
-  <app-manager></app-manager>
+  <app-tabs [files]="userDetail.files"></app-tabs>
+  <app-manager
+    [managerList]="userDetail.managerList"
+    [createdAt]="userDetail.createdAt"
+  ></app-manager>
   <!-- manager in charge -->
   <!-- buttons group -->
 </div>

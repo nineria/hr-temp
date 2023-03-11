@@ -49,6 +49,14 @@ export class ResumeViewComponent implements OnInit {
       ],
       createdAt: 1678179449539,
       updatedAt: 1678179449539,
+      files: [
+        {
+          name: 'Resume.pdf',
+        },
+        {
+          name: 'CV.pdf',
+        },
+      ],
     };
   }
 }
