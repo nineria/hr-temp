@@ -37,7 +37,7 @@ export const addResumeForm = () => {
       validators: [Validators.required],
       updateOn: 'change',
     }),
-    file: new FormControl([], {
+    files: new FormControl([], {
       validators: [Validators.required],
       updateOn: 'change',
     }),
