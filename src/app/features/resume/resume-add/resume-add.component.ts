@@ -54,7 +54,7 @@ export class ResumeAddComponent {
   }
 
   onSelectFile(event: any): void {
-    this.form.get('file')?.setValue(event);
+    this.form.get('files')?.setValue([event]);
   }
 
   onFormSubmit() {
