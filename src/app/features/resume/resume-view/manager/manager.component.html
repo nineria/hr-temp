@@ -1,1 +1,17 @@
-<p>manager works!</p>
+<div class="manager-container">
+  <ngb-accordion #ngbAccordion>
+    <ngb-panel id="toggle-1" [title]="accordionTitle">
+      <ng-template ngbPanelContent>
+        <div class="manager-wrapper">
+          <div class="manager" *ngFor="let manager of managerList">
+            <img [src]="manager.avatar" [alt]="manager.avatar" />
+            <div>
+              <div class="date">{{ date }}</div>
+              <div class="name">{{ manager.name }}</div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+</div>

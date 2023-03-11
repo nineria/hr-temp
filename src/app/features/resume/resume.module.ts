@@ -17,6 +17,7 @@ import { ResumeViewComponent } from './resume-view/resume-view.component';
 import { DetailComponent } from './resume-view/detail/detail.component';
 import { TabsComponent } from './resume-view/tabs/tabs.component';
 import { ManagerComponent } from './resume-view/manager/manager.component';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { ManagerComponent } from './resume-view/manager/manager.component';
     MatSortModule,
     FormsModule,
     NgbTooltipModule,
+    NgbAccordionModule,
   ],
 })
 export class ResumeModule {}

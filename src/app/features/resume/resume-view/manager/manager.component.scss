@@ -1,0 +1,30 @@
+.manager-container {
+  margin-top: 15px;
+}
+
+.manager-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.manager {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.manager img {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+}
+
+.manager .date {
+  font-size: 12px;
+}
+
+.manager .name {
+  font-size: 16px;
+  color: #005fbc;
+}
