@@ -13,13 +13,13 @@ export class ButtonComponent implements OnInit {
   disabled: boolean | string = false;
 
   @Input()
-  type: 'submit' | 'button' | 'cancel' = 'button';
+  type: string = 'button';
 
   @Input()
   id: string = '';
 
   @Input()
-  variant: 'default' | 'submit' | 'cancel' = 'default';
+  variant: string = 'default';
 
   @Input()
   padding: string = '10px 15px';

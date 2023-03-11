@@ -2,13 +2,12 @@ import {
   Component,
   EventEmitter,
   Input,
-  OnInit,
   Output,
   TemplateRef,
   ViewChild,
 } from '@angular/core';
 import { Router } from '@angular/router';
-import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-modal-basic',
@@ -31,13 +30,13 @@ export class ModalBasicComponent {
   id: string = '';
 
   @Input()
-  type: 'submit' | 'cancel' | 'button' = 'button';
+  type: string = 'button';
 
   @Input()
   label: string = '';
 
   @Input()
-  variant: 'submit' | 'cancel' | 'default' = 'default';
+  variant: string = 'default';
 
   @Output()
   onSubmit: EventEmitter<boolean> = new EventEmitter<boolean>();
