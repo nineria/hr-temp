@@ -1,24 +1,20 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { formatLocalDateTime } from 'src/app/core/utils/formatLocalDateTime';
 
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.scss'],
 })
-export class DetailComponent {
+export class DetailComponent implements OnInit {
   @Input()
   userDetail: any;
 
-  formatLocalDate(createdAt: number, local: string) {
-    const date = new Date(createdAt);
-    const result = date.toLocaleDateString(local, {
-      year: 'numeric',
-      month: 'long',
-      day: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit',
-    });
+  data: string = '';
 
-    return result;
+  constructor() {}
+
+  ngOnInit(): void {
+    this.data = formatLocalDateTime(this.userDetail.createdAt, 'th-TH');
   }
 }
