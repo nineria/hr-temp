@@ -1,8 +1,11 @@
+<!-- header -->
 <div class="header">
-  {{ header }}
+  {{ title }}
   <span *ngIf="getForm['files'].invalid" class="required">*</span>
 </div>
+<!-- content -->
 <div class="file-wrapper">
+  <!-- input drag & drop -->
   <input
     *ngIf="!fileName"
     class="file-input"
@@ -20,6 +23,7 @@
       <div>กรุณาอัปโหลดเอกสาร</div>
     </div>
   </div>
+  <!-- file preview -->
   <div *ngIf="fileName" class="file-preview">
     <div>
       <img [src]="fileThumbnail || 'http://placehold.it/50'" alt="" />

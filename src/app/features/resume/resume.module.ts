@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { DocumentUploadComponent } from './resume-add/document-upload/document-upload.component';
-import { DropdownSelectComponent } from './resume-add/dropdown-select/dropdown-select.component';
 import { InputOtherFormComponent } from './resume-add/input-other-form/input-other-form.component';
 import { ResumeAddComponent } from './resume-add/resume-add.component';
 import { ResumeRoutingModule } from './resume-routing.module';
@@ -23,7 +22,6 @@ import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
   declarations: [
     InputOtherFormComponent,
     InputFormComponent,
-    DropdownSelectComponent,
     DocumentUploadComponent,
     ResumeListComponent,
     ResumeAddComponent,

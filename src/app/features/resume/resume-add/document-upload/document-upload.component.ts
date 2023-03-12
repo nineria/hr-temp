@@ -5,8 +5,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   templateUrl: './document-upload.component.html',
   styleUrls: ['./document-upload.component.scss'],
 })
-export class DocumentUploadComponent implements OnInit {
-  header: string = 'อัพโหลดเอกสาร';
+export class DocumentUploadComponent {
+  title: string = 'อัพโหลดเอกสาร';
+
   loading: boolean = false;
 
   fileName: string = '';
@@ -23,10 +24,6 @@ export class DocumentUploadComponent implements OnInit {
   >();
 
   isSelectedFile: boolean = false;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 
   onSelectFile(event: any): void {
     this.isSelectedFile = false;
