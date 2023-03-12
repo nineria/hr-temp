@@ -4,31 +4,13 @@
       src="/assets/icons/x.png"
       alt="x.png"
       (click)="modal.close('default')"
-      style="
-        border-radius: 100%;
-        background-color: #ff5444;
-        width: fit-content;
-        padding: 8px;
-        width: 40px;
-        cursor: pointer;
-        margin-top: 25px;
-        margin-right: 25px;
-      "
+      class="close-btn"
     />
   </div>
-  <div style="display: flex; flex-direction: column; gap: 40px; padding: 25px">
-    <div
-      style="
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-        font-size: 24px;
-        font-weight: 500;
-      "
-    >
-      <div>{{ modalTitle }}</div>
-      <img src="/assets/icons/paper.png" alt="paper.png" width="80px" />
+  <!-- content -->
+  <div class="content-wrapper">
+    <div class="content">
+      <ng-content content></ng-content>
     </div>
     <app-button
       [id]="id"
@@ -42,7 +24,7 @@
 </ng-template>
 
 <app-button
-  [label]="label"
+  [label]="buttonLabel"
   [variant]="variant"
   [disabled]="form && form.invalid"
   (click)="open()"

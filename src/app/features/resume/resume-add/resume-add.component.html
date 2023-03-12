@@ -20,7 +20,6 @@
       [list]="managerList"
       (onSubmit)="onSelect($event)"
     ></app-multi-select>
-    <!-- DO NOT FORGET TO IMPLEMENT THIS -->
     <app-document-upload
       [getForm]="getForm"
       (onSelectFileEmit)="onSelectFile($event)"
@@ -31,21 +30,25 @@
       [getForm]="getForm"
     ></app-input-other-form>
     <div class="button-container">
-      <app-modal-basic
-        modalTitle="ยกเลิกการส่งแบบฟอร์ม?"
-        type="cancel"
-        variant="cancel"
-        label="ยกเลิก"
-      ></app-modal-basic>
+      <app-modal-basic type="cancel" variant="cancel" buttonLabel="ยกเลิก">
+        <ng-container content>
+          <div>ยกเลิกการส่งแบบฟอร์ม?</div>
+          <img src="/assets/icons/paper.png" alt="paper.png" width="80px" />
+        </ng-container>
+      </app-modal-basic>
       <app-modal-basic
         [form]="form"
         id="input-group-form"
-        modalTitle="ยืนยันการส่งแบบฟอร์ม?"
         type="submit"
-        label="ยืนยัน"
+        buttonLabel="ยืนยัน"
         variant="submit"
         (onSubmit)="onFormSubmit()"
-      ></app-modal-basic>
+      >
+        <ng-container content>
+          <div>ยืนยันการส่งแบบฟอร์ม?</div>
+          <img src="/assets/icons/paper.png" alt="paper.png" width="80px" />
+        </ng-container>
+      </app-modal-basic>
     </div>
   </form>
 </div>

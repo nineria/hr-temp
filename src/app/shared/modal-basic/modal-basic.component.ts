@@ -21,9 +21,6 @@ export class ModalBasicComponent {
   closeResult = '';
 
   @Input()
-  modalTitle: string = '';
-
-  @Input()
   form: any;
 
   @Input()
@@ -33,7 +30,7 @@ export class ModalBasicComponent {
   type: string = 'button';
 
   @Input()
-  label: string = '';
+  buttonLabel: string = '';
 
   @Input()
   variant: string = 'default';
