@@ -6,9 +6,17 @@ import { MatSortModule } from '@angular/material/sort';
 import { ButtonComponent } from './button/button.component';
 import { MultiSelectComponent } from './multi-select/multi-select.component';
 import { ModalBasicComponent } from './modal-basic/modal-basic.component';
+import { VerticalTimelineComponent } from './vertical-timeline/vertical-timeline.component';
+import { ModalBackComponent } from './modal-back/modal-back.component';
 
 @NgModule({
-  declarations: [MultiSelectComponent, ButtonComponent, ModalBasicComponent],
+  declarations: [
+    MultiSelectComponent,
+    ButtonComponent,
+    ModalBasicComponent,
+    VerticalTimelineComponent,
+    ModalBackComponent,
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -16,6 +24,12 @@ import { ModalBasicComponent } from './modal-basic/modal-basic.component';
     ReactiveFormsModule,
     MatSortModule,
   ],
-  exports: [MultiSelectComponent, ButtonComponent, ModalBasicComponent],
+  exports: [
+    MultiSelectComponent,
+    ButtonComponent,
+    ModalBasicComponent,
+    VerticalTimelineComponent,
+    ModalBackComponent,
+  ],
 })
 export class SharedModule {}
