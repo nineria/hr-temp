@@ -1,0 +1,38 @@
+<div class="timeline-container">
+  <div
+    class="timeline-wrapper"
+    *ngFor="let timeline of timelineList; let i = index"
+  >
+    <div class="left-icon">
+      <img src="assets/icons/check-2.png" alt="assets/icons/check-2.png" />
+    </div>
+    <div
+      class="content-wrapper"
+      [class]="
+        i + 1 === timelineList.length
+          ? 'content-wrapper-last'
+          : 'content-wrapper'
+      "
+    >
+      <h1 class="header">{{ timeline.header }}</h1>
+      <div class="content">
+        <p>วันที่ :</p>
+        <span>{{ timeline.content[0].createdAt }}</span>
+      </div>
+      <div class="content">
+        <p>ผู้รับผิดชอบ :</p>
+        <span>{{ timeline.content[0].manager }}</span>
+      </div>
+      <div class="content">
+        <p>คะแนนเฉลี่ย :</p>
+        <span style="color: #ec920e">{{
+          timeline.content[0].averageScore
+        }}</span>
+      </div>
+      <div class="content">
+        <p>รีวิว :</p>
+        <span>{{ timeline.content[0].review }}</span>
+      </div>
+    </div>
+  </div>
+</div>
