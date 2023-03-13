@@ -30,6 +30,9 @@ export class ButtonComponent implements OnInit {
   @Input()
   leftIcon: string = '';
 
+  @Input()
+  iconSize: string = '';
+
   constructor() {}
 
   ngOnInit(): void {
