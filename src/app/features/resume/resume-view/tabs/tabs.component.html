@@ -22,7 +22,11 @@
     ไม่พบเอกสารที่เกี่ยวข้อง
   </div>
   <!-- ประวัติการดำเนินการ -->
-  <div *ngIf="!toggle" class="tabs-content-history">
-    <div style="text-align: center">ไม่พบประวัติการดำเนินการ</div>
+  <div *ngIf="!toggle">
+    <app-vertical-timeline></app-vertical-timeline>
   </div>
+  <!-- *** DO NOT FORGET TO IMPLEMENT THIS *** -->
+  <!-- <div *ngIf="!toggle" class="tabs-content-history">
+    <div style="text-align: center">ไม่พบประวัติการดำเนินการ</div>
+  </div> -->
 </div>
