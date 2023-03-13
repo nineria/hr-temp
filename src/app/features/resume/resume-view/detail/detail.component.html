@@ -11,22 +11,30 @@
       ตำแหน่ง <span>{{ userDetail.positionList[0].name }}</span>
     </div>
   </div>
-  <div class="card-wrapper">
-    <div class="flex-table left">
-      <div *ngIf="userDetail.nickname">ชื่อเล่น :</div>
-      <div>อีเมล :</div>
-      <div>เบอร์โทรศัพท์ :</div>
-      <div *ngIf="userDetail.other">ข้อมูลเพิ่มเติม :</div>
-      <div>ข้อมูลโดย :</div>
-      <div>วันที่เพิ่มข้อมูล :</div>
+  <div class="card-content-wrapper">
+    <div *ngIf="userDetail.nickname" class="card-content">
+      <p>ชื่อเล่น :</p>
+      <span>{{ userDetail.nickname }}</span>
     </div>
-    <div class="flex-table right">
-      <div *ngIf="userDetail.nickname">{{ userDetail.nickname }}</div>
-      <div>{{ userDetail.email }}</div>
-      <div>{{ userDetail.phoneNumber }}</div>
-      <div *ngIf="userDetail.other">{{ userDetail.other }}</div>
-      <div>ข้อมูลโดย?</div>
-      <div>{{ data }} น.</div>
+    <div class="card-content">
+      <p>อีเมล :</p>
+      <span>{{ userDetail.email }}</span>
+    </div>
+    <div class="card-content">
+      <p>เบอร์โทรศัพท์ :</p>
+      <span>{{ userDetail.phoneNumber }}</span>
+    </div>
+    <div *ngIf="userDetail.other" class="card-content">
+      <p>ข้อมูลเพิ่มเติม :</p>
+      <span>{{ userDetail.other }}</span>
+    </div>
+    <div class="card-content">
+      <p>ข้อมูลโดย :</p>
+      <span>ข้อมูลโดย?</span>
+    </div>
+    <div class="card-content">
+      <p>วันที่เพิ่มข้อมูล :</p>
+      <span>{{ data }} น.</span>
     </div>
   </div>
 </div>
