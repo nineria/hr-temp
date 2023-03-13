@@ -7,7 +7,6 @@ import { ButtonComponent } from './button/button.component';
 import { MultiSelectComponent } from './multi-select/multi-select.component';
 import { ModalBasicComponent } from './modal-basic/modal-basic.component';
 import { VerticalTimelineComponent } from './vertical-timeline/vertical-timeline.component';
-import { ModalBackComponent } from './modal-back/modal-back.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +14,6 @@ import { ModalBackComponent } from './modal-back/modal-back.component';
     ButtonComponent,
     ModalBasicComponent,
     VerticalTimelineComponent,
-    ModalBackComponent,
   ],
   imports: [
     CommonModule,
@@ -29,7 +27,6 @@ import { ModalBackComponent } from './modal-back/modal-back.component';
     ButtonComponent,
     ModalBasicComponent,
     VerticalTimelineComponent,
-    ModalBackComponent,
   ],
 })
 export class SharedModule {}
