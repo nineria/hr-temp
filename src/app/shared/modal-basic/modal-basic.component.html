@@ -25,7 +25,9 @@
 
 <app-button
   [label]="buttonLabel"
+  [leftIcon]="leftIcon"
   [variant]="variant"
+  iconSize="10px"
   [disabled]="form && form.invalid"
   (click)="open()"
 ></app-button>

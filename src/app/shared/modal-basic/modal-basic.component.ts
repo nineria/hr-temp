@@ -35,6 +35,9 @@ export class ModalBasicComponent {
   @Input()
   variant: string = 'default';
 
+  @Input()
+  leftIcon: string = '';
+
   @Output()
   onSubmit: EventEmitter<boolean> = new EventEmitter<boolean>();
 
