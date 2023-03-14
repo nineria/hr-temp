@@ -59,10 +59,15 @@ export class ResumeAddComponent {
   }
 
   onFormSubmit() {
+    // timestamp
     this.form.get('createdAt')?.setValue(Date.now());
     this.form.get('updatedAt')?.setValue(Date.now());
+
+    // mockup data
     this.form.get('status')?.setValue('รอรีวิว');
     this.form.get('averageScore')?.setValue('5.0/5.0');
+
+    if (this.form.invalid) return;
 
     const formData = new FormData();
     jsonToFormData(formData, this.form.value);
@@ -70,7 +75,6 @@ export class ResumeAddComponent {
     formData.forEach((formValue, key) => {
       console.log(`${key} :  `, formValue);
     });
-    if (this.form.invalid) return;
 
     console.log(this.form.value);
   }
