@@ -18,12 +18,14 @@
       multiSelectTitle="แผนกที่สมัคร"
       placeholder="เลือกแผนกที่สมัคร"
       [list]="departmentList"
+      [selectedList]="this.interviewerInfo.departmentList"
       (onSubmit)="onSelect($event)"
     ></app-multi-select>
     <app-multi-select
       multiSelectTitle="ตำแหน่ง"
       placeholder="เลือกตำแหน่ง"
       [list]="positionList"
+      [selectedList]="this.interviewerInfo.positionList"
       (onSubmit)="onSelect($event)"
     ></app-multi-select>
     <app-multi-select

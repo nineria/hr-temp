@@ -30,16 +30,20 @@ export class ResumeEditComponent {
   }
 
   ngOnInit(): void {
+    // mock แผนกที่สมัคร
+    this.departmentList = departmentList;
+    // mock ตำแหน่ง
+    this.positionList = positionList;
+    // mock ผู้รับผิดชอบ
+    this.managerList = managerList;
+
     this.interviewerInfo = {
-      id: '1X35b',
-      name: 'ป้าใจ',
-      surname: 'ดวงดี',
-      nickname: 'ป้าใจ',
-      phoneNumber: 123456789,
-      email: '123@kalaland.com',
-      other: '',
-      status: 'รอสัมภาษณ์',
-      averageScore: '4.0/5.0',
+      name: 'สหกิจ',
+      surname: 'ศึกษา',
+      nickname: 'มหาลัย',
+      phoneNumber: 123,
+      email: 'dek@noy.net',
+      other: 'https://nineria.vercel.app',
       departmentList: [
         {
           id: 1,
@@ -66,20 +70,14 @@ export class ResumeEditComponent {
           position: 'manager',
         },
       ],
-      createdAt: 1678179449539,
-      updatedAt: 1678179449539,
+      files: [File],
+      createdAt: 1678808599451,
+      updatedAt: 1678808599451,
+      status: 'รอรีวิว',
+      averageScore: '5.0/5.0',
     };
 
-    // mock แผนกที่สมัคร
-    this.departmentList = departmentList;
-    // mock ตำแหน่ง
-    this.positionList = positionList;
-    // mock ผู้รับผิดชอบ
-    this.managerList = managerList;
-
-    // this.form.get('departmentList')?.setValue(data);
-    // this.form.get('positionList')?.setValue(data);
-    // this.form.get('managerList')?.setValue(data);
+    this.form.setValue(this.interviewerInfo);
   }
 
   onSelect({ type, data }: any): void {
