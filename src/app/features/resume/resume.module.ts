@@ -17,6 +17,8 @@ import { DetailComponent } from './resume-view/detail/detail.component';
 import { TabsComponent } from './resume-view/tabs/tabs.component';
 import { ManagerComponent } from './resume-view/manager/manager.component';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
+import { ResumeEditComponent } from './resume-edit/resume-edit.component';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
     DetailComponent,
     TabsComponent,
     ManagerComponent,
+    ResumeEditComponent,
   ],
   imports: [
     CommonModule,
@@ -41,6 +44,7 @@ import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     NgbTooltipModule,
     NgbAccordionModule,
+    NgbPaginationModule,
   ],
 })
 export class ResumeModule {}

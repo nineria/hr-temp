@@ -21,68 +21,89 @@
   <!-- table -->
   <!-- BORDER NOT VALID -->
   <div class="table-container">
-    <table matSort (matSortChange)="sortData($event)">
-      <thead>
-        <th mat-sort-header="name">ชื่อ-สกุล</th>
-        <th>แผนก</th>
-        <th>วันที่ยื่นสมัคร</th>
-        <th>สถานะ</th>
-        <th>ผู้รับผิดชอบสัมภาษณ์</th>
-        <th>คะแนนโดยรวม</th>
-        <th>ดูเพิ่มเติม</th>
-      </thead>
-      <tbody *ngFor="let row of sortedTable">
-        <td style="text-align: left">{{ row.name }} {{ row.surname }}</td>
-        <td>{{ row.departmentList[0].name }}</td>
-        <td>{{ localDate(row.createdAt, "th-TH") }}</td>
-        <td>
-          <div style="color: #ec920e; font-weight: 600">
-            {{ row.status }}
-          </div>
-        </td>
-        <td style="display: flex; flex-direction: row">
-          <div *ngFor="let member of row.managerList">
-            <ng-template #tipContent>
-              <div style="text-align: center">
-                <div>{{ member.name }}</div>
-                <div style="font-size: 10px; color: #c7c7cc">
-                  {{ member.position }}
+    <div class="table-wrapper">
+      <table matSort (matSortChange)="sortData($event)">
+        <thead>
+          <th mat-sort-header="name">ชื่อ-สกุล</th>
+          <th>แผนก</th>
+          <th>วันที่ยื่นสมัคร</th>
+          <th>สถานะ</th>
+          <th>ผู้รับผิดชอบสัมภาษณ์</th>
+          <th>คะแนนโดยรวม</th>
+          <th>ดูเพิ่มเติม</th>
+        </thead>
+        <tbody *ngFor="let row of sortedTable">
+          <td style="text-align: left">{{ row.name }} {{ row.surname }}</td>
+          <td>{{ row.departmentList[0].name }}</td>
+          <td>{{ localDate(row.createdAt, "th-TH") }}</td>
+          <td>
+            <div style="color: #ec920e; font-weight: 600">
+              {{ row.status }}
+            </div>
+          </td>
+          <td style="display: flex; flex-direction: row">
+            <div *ngFor="let member of row.managerList">
+              <ng-template #tipContent>
+                <div style="text-align: center">
+                  <div>{{ member.name }}</div>
+                  <div style="font-size: 10px; color: #c7c7cc">
+                    {{ member.position }}
+                  </div>
                 </div>
-              </div>
-            </ng-template>
-            <img
-              [src]="member.avatar"
-              alt="image"
-              class="avatar"
-              [ngbTooltip]="tipContent"
-            />
-          </div>
-        </td>
-        <td>
-          <div class="average-score">
-            {{ row.averageScore }}
-          </div>
-        </td>
-        <td>
-          <div class="other-menu-wrapper" [routerLink]="'/resume/' + row.id">
-            <img
-              src="/assets/icons/other-menu.png"
-              alt="/assets/icons/other-menu.png"
-              class="other-menu"
-            />
-          </div>
-        </td>
-      </tbody>
-    </table>
-    <div
-      *ngIf="table.length < 1 || sortedTable.length < 1"
-      style="text-align: center; margin-top: 10px"
-    >
-      ไม่พบรายการ
+              </ng-template>
+              <img
+                [src]="member.avatar"
+                alt="image"
+                class="avatar"
+                [ngbTooltip]="tipContent"
+              />
+            </div>
+          </td>
+          <td>
+            <div class="average-score">
+              {{ row.averageScore }}
+            </div>
+          </td>
+          <td>
+            <div class="other-menu-wrapper" [routerLink]="'/resume/' + row.id">
+              <img
+                src="/assets/icons/other-menu.png"
+                alt="/assets/icons/other-menu.png"
+                class="other-menu"
+              />
+            </div>
+          </td>
+        </tbody>
+      </table>
+      <div
+        *ngIf="table.length < 1 || sortedTable.length < 1"
+        style="text-align: center; margin-top: 10px"
+      >
+        ไม่พบรายการ
+      </div>
     </div>
   </div>
-  <div>
+  <div class="pagination-container">
     <!-- pagination -->
     <!-- DO NOT FORGET PAGINATION -->
+    <ngb-pagination
+      [collectionSize]="table.length"
+      [(page)]="page"
+      [pageSize]="pageSize"
+      (pageChange)="onPageChange()"
+    >
+      <ng-template ngbPaginationPrevious>
+        <img
+          src="assets/icons/arrow-left.png"
+          alt="assets/icons/arrow-left.png"
+        />
+      </ng-template>
+      <ng-template ngbPaginationNext>
+        <img
+          src="assets/icons/arrow-right.png"
+          alt="assets/icons/arrow-right.png"
+        />
+      </ng-template>
+    </ngb-pagination>
   </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-button',
@@ -33,7 +34,10 @@ export class ButtonComponent implements OnInit {
   @Input()
   iconSize: string = '';
 
-  constructor() {}
+  @Input()
+  routerLink: string = '';
+
+  constructor(public router: Router) {}
 
   ngOnInit(): void {
     switch (this.padding) {

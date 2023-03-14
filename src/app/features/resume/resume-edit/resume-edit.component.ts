@@ -6,15 +6,16 @@ import { positionList } from 'src/app/core/constants/positionList';
 import { addResumeForm } from 'src/app/core/forms/addresume';
 import { ManagerList } from 'src/app/core/interfaces/managerList';
 import { MultiSelect } from 'src/app/core/interfaces/MultiSelect';
-import { jsonToFormData } from 'src/app/core/utils/form.util';
 
 @Component({
-  selector: 'app-resume-add',
-  templateUrl: './resume-add.component.html',
-  styleUrls: ['./resume-add.component.scss'],
+  selector: 'app-resume-edit',
+  templateUrl: './resume-edit.component.html',
+  styleUrls: ['./resume-edit.component.scss'],
 })
-export class ResumeAddComponent {
-  formTitle: string = 'เพิ่มข้อมูล RESUME';
+export class ResumeEditComponent {
+  formTitle: string = 'แก้ไขข้อมูล';
+
+  interviewerInfo: any;
 
   departmentList: MultiSelect[] = [];
   positionList: MultiSelect[] = [];
@@ -29,12 +30,56 @@ export class ResumeAddComponent {
   }
 
   ngOnInit(): void {
+    this.interviewerInfo = {
+      id: '1X35b',
+      name: 'ป้าใจ',
+      surname: 'ดวงดี',
+      nickname: 'ป้าใจ',
+      phoneNumber: 123456789,
+      email: '123@kalaland.com',
+      other: '',
+      status: 'รอสัมภาษณ์',
+      averageScore: '4.0/5.0',
+      departmentList: [
+        {
+          id: 1,
+          name: 'Developer',
+        },
+      ],
+      positionList: [
+        {
+          id: 1,
+          name: 'UX/UI',
+        },
+      ],
+      managerList: [
+        {
+          id: 4,
+          name: 'นิธินัย เหินเวหา',
+          avatar: 'https://www.w3schools.com/howto/img_avatar.png',
+          position: 'CEO',
+        },
+        {
+          id: 1,
+          name: 'สงวน ลิขสิทธิ์',
+          avatar: 'https://www.w3schools.com/howto/img_avatar.png',
+          position: 'manager',
+        },
+      ],
+      createdAt: 1678179449539,
+      updatedAt: 1678179449539,
+    };
+
     // mock แผนกที่สมัคร
     this.departmentList = departmentList;
     // mock ตำแหน่ง
     this.positionList = positionList;
     // mock ผู้รับผิดชอบ
     this.managerList = managerList;
+
+    // this.form.get('departmentList')?.setValue(data);
+    // this.form.get('positionList')?.setValue(data);
+    // this.form.get('managerList')?.setValue(data);
   }
 
   onSelect({ type, data }: any): void {
@@ -64,12 +109,6 @@ export class ResumeAddComponent {
     this.form.get('status')?.setValue('รอรีวิว');
     this.form.get('averageScore')?.setValue('5.0/5.0');
 
-    const formData = new FormData();
-    jsonToFormData(formData, this.form.value);
-
-    formData.forEach((formValue, key) => {
-      console.log(`${key} :  `, formValue);
-    });
     if (this.form.invalid) return;
 
     console.log(this.form.value);

@@ -24,10 +24,26 @@ export class TableViewComponent implements OnInit {
 
   sortedTable: any[] = [];
 
+  page = 1;
+
+  pageSize = 5;
+
   constructor() {}
 
   ngOnInit(): void {
     this.sortedTable = this.table.slice();
+    this.onPageChange();
+  }
+
+  selectPage(page: string) {
+    this.page = parseInt(page, 10) || 1;
+  }
+
+  onPageChange() {
+    this.sortedTable = this.table.slice(
+      (this.page - 1) * this.pageSize,
+      (this.page - 1) * this.pageSize + this.pageSize
+    );
   }
 
   sortData(sort: Sort) {

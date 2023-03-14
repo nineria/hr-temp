@@ -1,6 +1,7 @@
 .table-container {
   display: flex;
   flex-direction: column;
+  min-height: 500px;
 }
 
 .head-menu {
@@ -58,10 +59,14 @@
   background-color: #fff;
 }
 
+.table-wrapper {
+  overflow-x: scroll;
+}
+
 table {
   border-collapse: collapse;
   width: 100%;
-  overflow: hidden;
+  white-space: nowrap;
 }
 
 thead {
@@ -96,6 +101,11 @@ td {
   padding: 10px;
   color: #000;
   font-weight: 400;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: end;
 }
 
 ::ng-deep .tooltip-inner {
