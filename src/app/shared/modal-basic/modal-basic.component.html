@@ -29,5 +29,5 @@
   [variant]="variant"
   iconSize="10px"
   [disabled]="form && form.invalid"
-  (click)="open()"
+  (click)="form && form.invalid ? null : open()"
 ></app-button>

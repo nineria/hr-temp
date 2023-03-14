@@ -46,14 +46,20 @@ export class ModalBasicComponent {
   open() {
     this.modalService
       .open(this.basicTemplateRef, {
-        ariaLabelledBy: 'modal-basic-title',
         centered: true,
         size: 'md',
       })
       .result.then((result) => {
-        if (result === 'submit') this.onSubmit.emit();
-        else if (result === 'default') return;
-        else this.router.navigate(['resume']);
+        switch (result) {
+          case 'submit':
+            this.onSubmit.emit();
+            break;
+          case 'default':
+            break;
+          default:
+            this.router.navigate(['resume']);
+            break;
+        }
       });
   }
 }

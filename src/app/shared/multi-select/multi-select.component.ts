@@ -44,7 +44,12 @@ export class MultiSelectComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.onSubmit.emit({
+      type: this.multiSelectTitle,
+      data: this.selectedList,
+    });
+  }
 
   onDrop(event: CdkDragDrop<MultiSelect[]>) {
     moveItemInArray(this.selectedList, event.previousIndex, event.currentIndex);
