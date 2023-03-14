@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-vertical-timeline',
-  templateUrl: './vertical-timeline.component.html',
-  styleUrls: ['./vertical-timeline.component.scss'],
+  selector: 'app-candidate-timeline',
+  templateUrl: './candidate-timeline.component.html',
+  styleUrls: ['./candidate-timeline.component.scss'],
 })
-export class VerticalTimelineComponent implements OnInit {
+export class CandidateTimelineComponent implements OnInit {
   timelineList: any[] = [];
 
   ngOnInit(): void {

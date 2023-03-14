@@ -6,7 +6,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { ButtonComponent } from './button/button.component';
 import { MultiSelectComponent } from './multi-select/multi-select.component';
 import { ModalBasicComponent } from './modal-basic/modal-basic.component';
-import { VerticalTimelineComponent } from './vertical-timeline/vertical-timeline.component';
+import { CandidateTimelineComponent } from './candidate-timeline/candidate-timeline.component';
 import { DropdownsComponent } from './dropdowns/dropdowns.component';
 import { TypographyHeaderInputComponent } from './typography-header-input/typography-header-input.component';
 import { RouterModule } from '@angular/router';
@@ -16,7 +16,7 @@ import { RouterModule } from '@angular/router';
     MultiSelectComponent,
     ButtonComponent,
     ModalBasicComponent,
-    VerticalTimelineComponent,
+    CandidateTimelineComponent,
     DropdownsComponent,
     TypographyHeaderInputComponent,
   ],
@@ -32,7 +32,7 @@ import { RouterModule } from '@angular/router';
     MultiSelectComponent,
     ButtonComponent,
     ModalBasicComponent,
-    VerticalTimelineComponent,
+    CandidateTimelineComponent,
     DropdownsComponent,
     TypographyHeaderInputComponent,
   ],
