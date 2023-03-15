@@ -27,13 +27,13 @@ export class ModalBasicComponent {
   id: string = '';
 
   @Input()
-  type: string = 'button';
+  type: 'submit' | 'button' = 'button';
 
   @Input()
   buttonLabel: string = '';
 
   @Input()
-  variant: string = 'default';
+  variant: 'submit' | 'cancel' | 'back' | 'default' = 'default';
 
   @Input()
   leftIcon: string = '';

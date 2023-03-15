@@ -16,7 +16,8 @@
       [id]="id"
       label="ยืนยัน"
       [type]="type"
-      rounded="lg"
+      rounded="md"
+      variant="submit"
       (click)="modal.close(type)"
     >
     </app-button>
@@ -27,6 +28,7 @@
   [label]="buttonLabel"
   [leftIcon]="leftIcon"
   [variant]="variant"
+  padding="md"
   iconSize="10px"
   [disabled]="form && form.invalid"
   (click)="form && form.invalid ? null : open()"

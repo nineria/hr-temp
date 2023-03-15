@@ -1,10 +1,6 @@
 <div class="card-container">
   <div class="back-button">
-    <app-modal-basic
-      type="back"
-      variant="back"
-      leftIcon="/assets/icons/back.png"
-    >
+    <app-modal-basic variant="back" leftIcon="/assets/icons/back.png">
       <ng-container content>
         <div>ยกเลิกการส่งแบบฟอร์ม?</div>
         <img src="/assets/icons/paper.png" alt="paper.png" width="80px" />
@@ -43,7 +39,7 @@
       [getForm]="getForm"
     ></app-input-other-form>
     <div class="button-container">
-      <app-modal-basic type="cancel" variant="cancel" buttonLabel="ยกเลิก">
+      <app-modal-basic variant="cancel" buttonLabel="ยกเลิก">
         <ng-container content>
           <div>ยกเลิกการส่งแบบฟอร์ม?</div>
           <img src="/assets/icons/paper.png" alt="paper.png" width="80px" />

@@ -14,19 +14,23 @@ export class ButtonComponent implements OnInit {
   disabled: boolean | string = false;
 
   @Input()
-  type: string = 'button';
+  type: 'submit' | 'button' = 'button';
 
   @Input()
   id: string = '';
 
   @Input()
-  variant: string = 'default';
+  variant: 'submit' | 'cancel' | 'back' | 'default' = 'default';
 
   @Input()
-  padding: string = '10px 15px';
+  padding: 'sm' | 'md' | 'lg' = 'md';
+
+  paddingStyle: string = '';
 
   @Input()
-  rounded: string = '10px';
+  rounded: 'sm' | 'md' | 'lg' | 'full' = 'sm'; // '10px';
+
+  roundedStyle: string = '';
 
   @Input()
   leftIcon: string = '';
@@ -40,31 +44,45 @@ export class ButtonComponent implements OnInit {
   constructor(public router: Router) {}
 
   ngOnInit(): void {
-    switch (this.padding) {
-      default:
-        this.padding = `padding: ${this.padding};`;
-        break;
-    }
-    switch (this.rounded) {
+    this.getPaddingStyle(this.padding);
+    this.getRoundedStyle(this.rounded);
+
+    this.isDisable(this.disabled);
+  }
+
+  getPaddingStyle(option: any) {
+    switch (option) {
       case 'sm':
-        this.rounded = 'border-radius: 5px;';
+        this.paddingStyle = '5px 10px';
         break;
       case 'md':
-        this.rounded = 'border-radius: 10px;';
-
+        this.paddingStyle = '10px 15px';
         break;
       case 'lg':
-        this.rounded = 'border-radius: 15px;';
-
-        break;
-      case 'full':
-        this.rounded = 'border-radius: 100%;';
-        break;
-      default:
-        this.rounded = `border-radius: ${this.rounded};`;
+        this.paddingStyle = '15px 20px';
         break;
     }
-    switch (this.disabled) {
+  }
+
+  getRoundedStyle(option: any) {
+    switch (option) {
+      case 'sm':
+        this.roundedStyle = '8px';
+        break;
+      case 'md':
+        this.roundedStyle = '15px';
+        break;
+      case 'lg':
+        this.roundedStyle = '20px';
+        break;
+      case 'full':
+        this.roundedStyle = '100%';
+        break;
+    }
+  }
+
+  isDisable(option: any) {
+    switch (option) {
       case true:
         this.disabled = 'opacity: 0.7; cursor: not-allowed;';
         break;
