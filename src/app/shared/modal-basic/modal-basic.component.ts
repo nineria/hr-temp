@@ -41,7 +41,7 @@ export class ModalBasicComponent {
   @Output()
   onSubmit: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor(private modalService: NgbModal, private router: Router) {}
+  constructor(private modalService: NgbModal) {}
 
   open() {
     this.modalService
@@ -49,17 +49,6 @@ export class ModalBasicComponent {
         centered: true,
         size: 'md',
       })
-      .result.then((result) => {
-        switch (result) {
-          case 'submit':
-            this.onSubmit.emit();
-            break;
-          case 'default':
-            break;
-          default:
-            this.router.navigate(['resume']);
-            break;
-        }
-      });
+      .result.then(() => this.onSubmit.emit());
   }
 }

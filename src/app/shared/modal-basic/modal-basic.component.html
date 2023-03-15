@@ -7,23 +7,20 @@
       class="close-btn"
     />
   </div>
-  <!-- content -->
+  <!-- modal pop-up -->
   <div class="content-wrapper">
+    <!-- content -->
     <div class="content">
-      <ng-content content></ng-content>
+      <ng-content [select]="content"></ng-content>
     </div>
-    <app-button
-      [id]="id"
-      label="ยืนยัน"
-      [type]="type"
-      rounded="md"
-      variant="submit"
-      (click)="modal.close(type)"
-    >
-    </app-button>
+    <!-- close button -->
+    <div (click)="modal.close()">
+      <ng-content [select]="button"> </ng-content>
+    </div>
   </div>
 </ng-template>
 
+<!-- open modal -->
 <app-button
   [label]="buttonLabel"
   [leftIcon]="leftIcon"
