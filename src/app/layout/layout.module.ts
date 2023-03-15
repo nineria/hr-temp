@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-
+import { LayoutReimbursementComponent } from './layout-reimbursement/layout-reimbursement.component';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  declarations: [LayoutReimbursementComponent],
+  imports: [CommonModule],
+  exports: [LayoutReimbursementComponent],
 })
-export class LayoutModule { }
+export class LayoutModule {}

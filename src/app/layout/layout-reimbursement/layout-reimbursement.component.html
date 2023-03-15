@@ -1,0 +1,19 @@
+<section class="container-reimbursement">
+  <div class="card-container card shadow p-4 wrapper-card-reimbursement">
+    <div class="top-header-wrapper" [style]="justifyContent">
+      <h1
+        style="margin-bottom: -10px"
+        class="header-reimbursement-title"
+        [style]="margin"
+      >
+        {{ titleHeader }}
+      </h1>
+      <ng-content select="[cardHeader]"> </ng-content>
+    </div>
+    <ng-content select="[cardContent]"></ng-content>
+
+    <div class="submit-wrapper-reimbursement">
+      <ng-content select="[submitWrapper]"></ng-content>
+    </div>
+  </div>
+</section>
