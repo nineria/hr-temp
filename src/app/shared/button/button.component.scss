@@ -1,3 +1,9 @@
+.default {
+  background-color: #005fbc;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
 .button {
   display: flex;
   flex-direction: row;
@@ -25,8 +31,25 @@
     #005fbc 99.1%
   );
   border: 1px solid #fff;
-  border: 1px solid transparent;
   color: #fff;
+}
+
+.success {
+  background-color: #63be00;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.danger {
+  background-color: #db0000;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.orange-outline {
+  background-color: #fff;
+  border: 1px solid #ec920e;
+  color: #ec920e;
 }
 
 .back {
@@ -44,19 +67,15 @@
   cursor: pointer;
 }
 
-.default {
-  background-color: #005fbc;
-  border: 1px solid #fff;
-  border: 1px solid transparent;
-  color: #fff;
-}
-
-.cancel:active {
+.cancel:active,
+.orange-outline:active {
   background-color: #eee;
 }
 
 .submit:active,
 .default:active,
-.back:active {
+.back:active,
+.success:active,
+.danger:active {
   opacity: 0.8;
 }

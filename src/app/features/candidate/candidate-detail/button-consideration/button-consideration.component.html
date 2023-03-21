@@ -1,0 +1,113 @@
+<div class="button-control-container">
+  <app-confirm-modal
+    id="input-group-form"
+    type="submit"
+    [buttonLabel]="'สัมภาษณ์รอบ ' + interviewRound"
+    variant="orange-outline"
+    paddingCustom="10px 40px"
+    leftIcon="/assets/icons/check-warning.png"
+  >
+    <ng-container content>
+      <div class="model-content font-custom-select">
+        <div class="header">สัมภาษณ์รอบ {{ interviewRound }}</div>
+        <app-interview-schedule-form
+          [form]="interviewScheduleForm"
+          [getForm]="getInterviewScheduleForm"
+        ></app-interview-schedule-form>
+      </div>
+    </ng-container>
+    <ng-container button>
+      <app-button
+        label="ยืนยัน"
+        rounded="md"
+        variant="submit"
+        (click)="(onInterviewScheduleFormSubmit)"
+      ></app-button>
+    </ng-container>
+  </app-confirm-modal>
+  <div class="button-control-wrapper">
+    <app-confirm-modal
+      id="input-group-form"
+      type="submit"
+      buttonLabel="ไม่ผ่าน"
+      variant="danger"
+      paddingCustom="10px 40px"
+      leftIcon="/assets/icons/circle-x.png"
+      (onSubmit)="onRejectClick()"
+    >
+      <ng-container content>
+        <div class="model-content font-custom-select">
+          <div class="header">ไม่ผ่าน</div>
+          <app-star-rating
+            header="Hard Skills"
+            headerWidth="150px"
+            (onSubmit)="onRatingChange($event)"
+          ></app-star-rating>
+          <app-star-rating
+            header="Soft Skills"
+            headerWidth="150px"
+            (onSubmit)="onRatingChange($event)"
+          ></app-star-rating>
+          <app-star-rating
+            header="Mindset"
+            headerWidth="150px"
+            (onSubmit)="onRatingChange($event)"
+          ></app-star-rating>
+          <div class="text-area-wrapper">
+            <label for="textarea">รีวิว</label>
+            <textarea placeholder="กรอกข้อมูล" type="text"></textarea>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container button>
+        <app-button
+          [label]="isSkipVote ? 'ข้าม' : 'ยืนยัน'"
+          rounded="md"
+          variant="submit"
+        ></app-button>
+      </ng-container>
+    </app-confirm-modal>
+
+    <app-confirm-modal
+      id="input-group-form"
+      type="submit"
+      paddingCustom="10px 40px"
+      buttonLabel="ผ่านการพิจารณา"
+      variant="success"
+      leftIcon="/assets/icons/circle-check.png"
+      (onSubmit)="onApproveClick()"
+    >
+      <ng-container content>
+        <div class="model-content font-custom-select">
+          <div class="header">ผ่านการพิจารณา</div>
+          <app-star-rating
+            header="Hard Skills"
+            headerWidth="150px"
+            (onSubmit)="onRatingChange($event)"
+          ></app-star-rating>
+          <app-star-rating
+            header="Soft Skills"
+            headerWidth="150px"
+            (onSubmit)="onRatingChange($event)"
+          ></app-star-rating>
+          <app-star-rating
+            header="Mindset"
+            headerWidth="150px"
+            (onSubmit)="onRatingChange($event)"
+          ></app-star-rating>
+          <div class="text-area-wrapper">
+            <label for="textarea">รีวิว</label>
+            <textarea placeholder="กรอกข้อมูล" type="text"></textarea>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container button>
+        <app-button
+          [label]="isSkipVote ? 'ข้าม' : 'ยืนยัน'"
+          rounded="md"
+          variant="submit"
+        ></app-button>
+      </ng-container>
+    </app-confirm-modal>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<app-layout-candidate>
+  <ng-container header>
+    <div class="button-back" routerLink="/main/candidate">
+      <img src="/assets/icons/back.png" alt="/assets/icons/back.png" />
+    </div>
+    <div class="button-edit" routerLink="/main/candidate/123/edit">
+      <img src="/assets/icons/edit.png" alt="" />
+      <div>แก้ไขข้อมูล</div>
+    </div>
+  </ng-container>
+  <ng-container body>
+    <!-- candidate detail -->
+    <app-detail [candidate]="candidate"></app-detail>
+    <!-- tabs -->
+    <app-tabs [files]="candidate.files"></app-tabs>
+    <!-- manager(s) in charge -->
+    <app-managers
+      [managerList]="candidate.managerList"
+      [createdAt]="candidate.createdAt"
+      [isResumeVoted]="candidate.isResumeVoted"
+      [isInterviewed]="candidate.isInterviewed"
+    ></app-managers>
+  </ng-container>
+  <ng-container footer>
+    <!-- buttons case -->
+    <!-- # Case  - Lead confirm interview -->
+    <!-- # Case  - Lead interview -->
+    <app-button-interest-interview
+      *ngIf="!candidate.isResumeVoted"
+    ></app-button-interest-interview>
+    <app-button-consideration
+      *ngIf="candidate.isResumeVoted && !candidate.isInterviewed"
+    ></app-button-consideration>
+    <!-- DO NOT FORGET TO IMPLEMENT THIS -->
+    <!-- # Case 2 - Book Interview -->
+    <!-- # Case 3 - Approve & Reject -->
+  </ng-container>
+</app-layout-candidate>

@@ -1,0 +1,32 @@
+<div class="tabs-container">
+  <!-- tab header -->
+  <div class="tabs-header">
+    <div [class]="toggle ? 'active' : ''" (click)="toggle = !toggle">
+      เอกสารที่เกี่ยวข้อง
+    </div>
+    <div [class]="!toggle ? 'active' : ''" (click)="toggle = !toggle">
+      ประวัติการดำเนินการ
+    </div>
+    <!-- line -->
+    <div class="header-line"></div>
+  </div>
+  <!-- content -->
+  <!-- เอกสารที่เกี่ยวข้อง -->
+  <div *ngIf="toggle" class="tabs-content-document">
+    <div class="item" *ngFor="let file of files">
+      <img src="/assets/icons/file.png" alt="" width="50px" />
+      <div>{{ file.name }}</div>
+    </div>
+  </div>
+  <div style="text-align: center" *ngIf="files.length < 1">
+    ไม่พบเอกสารที่เกี่ยวข้อง
+  </div>
+  <!-- ประวัติการดำเนินการ -->
+  <div *ngIf="!toggle">
+    <app-candidate-timeline></app-candidate-timeline>
+  </div>
+  <!-- *** DO NOT FORGET TO IMPLEMENT THIS *** -->
+  <!-- <div *ngIf="!toggle" class="tabs-content-history">
+      <div style="text-align: center">ไม่พบประวัติการดำเนินการ</div>
+    </div> -->
+</div>

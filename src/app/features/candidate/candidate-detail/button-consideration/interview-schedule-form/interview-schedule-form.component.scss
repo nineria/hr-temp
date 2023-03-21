@@ -1,0 +1,43 @@
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  border: 1px solid #005fbc;
+  border-radius: 8px;
+  padding: 8px;
+  margin-top: 5px;
+  outline: none;
+}
+
+.input-wrapper label {
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.input-wrapper input {
+  font-size: 14px;
+  padding: 14px;
+}
+
+.required {
+  color: #ef0303;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.invalid {
+  border: 1px solid #ef0303;
+  border-radius: 8px;
+  padding: 8px;
+  margin-top: 5px;
+  outline: none;
+}

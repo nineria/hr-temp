@@ -1,0 +1,102 @@
+<div class="table-container">
+  <div class="head-menu">
+    <div class="title">{{ tableTitle }}</div>
+    <!-- filter -->
+    <div class="button-wrapper">
+      <app-search-filter
+        (filteredList)="onFilteredSelect($event)"
+        (searchChange)="onSearchChange($event)"
+      ></app-search-filter>
+      <app-button
+        routerLink="add"
+        label="เพิ่มรายการ"
+        variant="submit"
+        leftIcon="/assets/icons/add.png"
+        paddingCustom="8px 40px"
+      ></app-button>
+    </div>
+  </div>
+  <!-- table -->
+  <!-- BORDER NOT VALID -->
+  <div class="table-container">
+    <div class="table-wrapper">
+      <table matSort (matSortChange)="sortData($event)">
+        <thead style="text-align: center">
+          <th mat-sort-header="name">ชื่อ-สกุล</th>
+          <th>แผนก</th>
+          <th>วันที่ยื่นสมัคร</th>
+          <th>สถานะ</th>
+          <th style="text-align: left">ผู้รับผิดชอบสัมภาษณ์</th>
+          <th>คะแนนโดยรวม</th>
+          <th>ดูเพิ่มเติม</th>
+        </thead>
+        <tbody *ngFor="let row of sortedTable" style="text-align: center">
+          <td style="text-align: left">{{ row.name }} {{ row.surname }}</td>
+          <td>{{ row.departmentList[0].name }}</td>
+          <td>{{ localDate(row.createdAt, "th-TH") }}</td>
+          <td>
+            <div style="color: #ec920e; font-weight: 600">
+              {{ row.status }}
+            </div>
+          </td>
+          <td style="display: flex; flex-direction: row">
+            <div *ngFor="let member of row.managerList">
+              <ng-template #tipContent>
+                <div>
+                  <div>{{ member.name }}</div>
+                  <div style="font-size: 10px; color: #c7c7cc">
+                    {{ member.position }}
+                  </div>
+                </div>
+              </ng-template>
+              <img
+                [src]="member.avatar"
+                alt="image"
+                class="avatar"
+                [ngbTooltip]="tipContent"
+              />
+            </div>
+          </td>
+          <td>
+            <div class="average-score">
+              {{ row.averageScore }}
+            </div>
+          </td>
+          <td [routerLink]="row.id">
+            <img
+              src="/assets/icons/other-menu.png"
+              alt="/assets/icons/other-menu.png"
+              class="other-menu"
+            />
+          </td>
+        </tbody>
+      </table>
+      <div *ngIf="table.length < 1 || sortedTable.length < 1" class="not-found">
+        ไม่พบรายการ
+      </div>
+    </div>
+  </div>
+  <div class="pagination-container">
+    <!-- pagination -->
+    <!-- DO NOT FORGET PAGINATION -->
+    <ngb-pagination
+      [collectionSize]="table.length"
+      [(page)]="page"
+      [pageSize]="pageSize"
+      (pageChange)="onPageChange()"
+    >
+      <ng-template ngbPaginationPrevious>
+        <img
+          src="assets/icons/arrow-left.png"
+          alt="assets/icons/arrow-left.png"
+        />
+      </ng-template>
+      <ng-template ngbPaginationNext>
+        <img
+          src="assets/icons/arrow-right.png"
+          alt="assets/icons/arrow-right.png"
+        />
+      </ng-template>
+    </ngb-pagination>
+  </div>
+</div>

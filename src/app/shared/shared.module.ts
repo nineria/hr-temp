@@ -5,20 +5,23 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSortModule } from '@angular/material/sort';
 import { ButtonComponent } from './button/button.component';
 import { MultiSelectComponent } from './multi-select/multi-select.component';
-import { ModalBasicComponent } from './modal-basic/modal-basic.component';
+import { ConfirmModalComponent } from './confirm-modal/confirm-modal.component';
 import { CandidateTimelineComponent } from './candidate-timeline/candidate-timeline.component';
 import { DropdownsComponent } from './dropdowns/dropdowns.component';
 import { TypographyHeaderInputComponent } from './typography-header-input/typography-header-input.component';
 import { RouterModule } from '@angular/router';
+import { StarRatingComponent } from './star-rating/star-rating.component';
+import { NgxStarsModule } from 'ngx-stars';
 
 @NgModule({
   declarations: [
     MultiSelectComponent,
     ButtonComponent,
-    ModalBasicComponent,
+    ConfirmModalComponent,
     CandidateTimelineComponent,
     DropdownsComponent,
     TypographyHeaderInputComponent,
+    StarRatingComponent,
   ],
   imports: [
     CommonModule,
@@ -27,14 +30,16 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     MatSortModule,
     RouterModule,
+    NgxStarsModule,
   ],
   exports: [
     MultiSelectComponent,
     ButtonComponent,
-    ModalBasicComponent,
+    ConfirmModalComponent,
     CandidateTimelineComponent,
     DropdownsComponent,
     TypographyHeaderInputComponent,
+    StarRatingComponent,
   ],
 })
 export class SharedModule {}

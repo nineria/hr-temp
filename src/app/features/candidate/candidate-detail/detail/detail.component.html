@@ -1,0 +1,43 @@
+<div class="card-container font-custom-select">
+  <!-- DO NOT FORGET TO IMPLEMENT THIS -->
+  <!-- TITLE -->
+  <div class="card-wrapper">
+    <div class="title">{{ candidate.name }} {{ candidate.surname }}</div>
+    <div class="status">{{ candidate.status }}</div>
+  </div>
+  <!-- CONTENT -->
+  <div class="card-wrapper">
+    <div class="sub-title">
+      แผนก <span>{{ candidate.departmentList[0].name }}</span>
+    </div>
+    <div class="sub-title">
+      ตำแหน่ง <span>{{ candidate.positionList[0].name }}</span>
+    </div>
+  </div>
+  <div class="card-content-wrapper">
+    <div *ngIf="candidate.nickname" class="card-content">
+      <p>ชื่อเล่น :</p>
+      <span>{{ candidate.nickname }}</span>
+    </div>
+    <div class="card-content">
+      <p>อีเมล :</p>
+      <span>{{ candidate.email }}</span>
+    </div>
+    <div class="card-content">
+      <p>เบอร์โทรศัพท์ :</p>
+      <span>{{ candidate.phoneNumber }}</span>
+    </div>
+    <div *ngIf="candidate.other" class="card-content">
+      <p>ข้อมูลเพิ่มเติม :</p>
+      <span>{{ candidate.other }}</span>
+    </div>
+    <div class="card-content">
+      <p>ข้อมูลโดย :</p>
+      <span>ข้อมูลโดย?</span>
+    </div>
+    <div class="card-content">
+      <p>วันที่เพิ่มข้อมูล :</p>
+      <span>{{ formateDate(candidate.createdAt, "th-TH") }} น.</span>
+    </div>
+  </div>
+</div>

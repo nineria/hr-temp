@@ -6,20 +6,27 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./dropdowns.component.scss'],
 })
 export class DropdownsComponent implements OnInit {
-  @Input() dropdownOptions: string[] = [];
+  @Input() dropdownOptionList: string[] = [];
   @Input() placeholderVal: string = '';
   @Input() validationAlert: string | undefined = '';
+  @Input() inputDropdownValue?: string | null | any = '';
   @Output() optionChosenEvent = new EventEmitter<string | null | object>();
 
-  filteredOptions: string[] = [];
-  inputDropdownValue: string | null = '';
+  filteredOptionList: string[] = [];
   detectionTouch: boolean = false;
   turnOnOption: boolean = false;
 
   constructor() {}
 
   ngOnInit() {
-    this.filteredOptions = this.dropdownOptions;
+    this.isDefaultValue();
+    this.filteredOptionList = this.dropdownOptionList;
+  }
+
+  isDefaultValue() {
+    this.optionChosenEvent.emit(
+      this.setValueBeforeSend(this.inputDropdownValue, this.detectionTouch)
+    );
   }
 
   isTurnOnOption(optionValue: string | null) {
@@ -30,7 +37,7 @@ export class DropdownsComponent implements OnInit {
       this.setValueBeforeSend(optionValue, this.detectionTouch)
     );
     this.inputDropdownValue = optionValue;
-    this.filteredOptions = this.dropdownOptions;
+    this.filteredOptionList = this.dropdownOptionList;
   }
 
   onInputChange(e: any) {
@@ -39,7 +46,7 @@ export class DropdownsComponent implements OnInit {
     this.checkConditionError();
     this.inputDropdownValue = e.target.value;
     console.log('asd', e.target.value);
-    this.filteredOptions = this.searchFromArray(e.target.value);
+    this.filteredOptionList = this.searchFromArray(e.target.value);
     this.optionChosenEvent.emit(
       this.setValueBeforeSend(this.inputDropdownValue, this.detectionTouch)
     );
@@ -56,12 +63,12 @@ export class DropdownsComponent implements OnInit {
   }
 
   searchFromArray(value: string) {
-    this.filteredOptions = this.dropdownOptions;
+    this.filteredOptionList = this.dropdownOptionList;
     let matches = [],
       i;
-    for (i = 0; i < this.filteredOptions.length; i++) {
-      if (this.filteredOptions[i].match(value)) {
-        matches.push(this.filteredOptions[i]);
+    for (i = 0; i < this.filteredOptionList.length; i++) {
+      if (this.filteredOptionList[i].match(value)) {
+        matches.push(this.filteredOptionList[i]);
       }
     }
 
@@ -80,6 +87,6 @@ export class DropdownsComponent implements OnInit {
     if (this.inputDropdownValue) {
       this.turnOnOption = false;
     }
-    return this.dropdownOptions;
+    return this.dropdownOptionList;
   }
 }

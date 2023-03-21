@@ -1,0 +1,53 @@
+<div class="button-control-wrapper">
+  <app-confirm-modal
+    id="input-group-form"
+    type="submit"
+    buttonLabel="ไม่ผ่าน"
+    variant="danger"
+    paddingCustom="10px 40px"
+    leftIcon="/assets/icons/circle-x.png"
+    (onSubmit)="onRejectClick()"
+  >
+    <ng-container content>
+      <div class="model-content font-custom-select">
+        <div class="header">ไม่ผ่าน</div>
+        <img src="/assets/icons/paper.png" alt="paper.png" width="80px" />
+      </div>
+    </ng-container>
+    <ng-container button>
+      <app-button label="ยืนยัน" rounded="md" variant="submit"></app-button>
+    </ng-container>
+  </app-confirm-modal>
+
+  <app-confirm-modal
+    id="input-group-form"
+    type="submit"
+    paddingCustom="10px 40px"
+    buttonLabel="สนใจสัมภาษณ์"
+    variant="success"
+    leftIcon="/assets/icons/circle-check.png"
+    (onSubmit)="onApproveClick()"
+  >
+    <ng-container content>
+      <div class="model-content font-custom-select">
+        <div class="header">สนใจสัมภาษณ์</div>
+        <div class="star-rating-wrapper">
+          <app-star-rating
+            (onSubmit)="onRatingChange($event)"
+          ></app-star-rating>
+        </div>
+        <div class="text-area-wrapper">
+          <label for="textarea">รีวิว</label>
+          <textarea placeholder="กรอกข้อมูล" type="text"></textarea>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container button>
+      <app-button
+        [label]="isSkipVote ? 'ข้าม' : 'ยืนยัน'"
+        rounded="md"
+        variant="submit"
+      ></app-button>
+    </ng-container>
+  </app-confirm-modal>
+</div>

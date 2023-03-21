@@ -8,9 +8,9 @@ const routes: Routes = [
     redirectTo: 'resume',
   },
   {
-    path: 'resume',
+    path: 'candidate',
     loadChildren: () =>
-      import('./resume/resume.module').then((m) => m.ResumeModule),
+      import('./candidate/candidate.module').then((m) => m.CandidateModule),
   },
 ];
 

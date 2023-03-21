@@ -1,0 +1,61 @@
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #d1d1d6;
+  box-shadow: 0px 4px 30px -16px rgba(138, 159, 171, 0.35);
+  border-radius: 20px;
+  font-family: "Kanit";
+}
+
+.button-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(90deg, #e69755 0.1%, #ff5444 100.01%);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.button-back:active {
+  opacity: 0.8;
+}
+
+.button-back img {
+  width: 13px;
+}
+
+.button-back-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-edit {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #eb760b;
+  cursor: pointer;
+  user-select: none;
+}
+
+.button-edit:active {
+  opacity: 0.5;
+}
+
+.button-edit img {
+  height: 20px;
+  width: 20px;
+}

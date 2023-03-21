@@ -1,0 +1,19 @@
+<div
+  [style]="
+    header &&
+    'display: grid; grid-template-columns: ' +
+      headerWidth +
+      ' auto; grid-gap: 20px; text-align: right;'
+  "
+  class="star-rating-wrapper"
+>
+  <span *ngIf="header !== ''" class="header">{{ header }}</span>
+  <ngx-stars
+    [readonly]="readonly"
+    [size]="starSize"
+    [maxStars]="maxStar"
+    (ratingOutput)="onRatingSet($event)"
+    [color]="color"
+    [customPadding]="customPadding"
+  ></ngx-stars>
+</div>

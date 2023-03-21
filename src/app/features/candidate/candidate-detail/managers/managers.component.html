@@ -1,0 +1,82 @@
+<div class="manager-container">
+  <ngb-accordion #ngbAccordion>
+    <!-- TITLE -->
+    <ngb-panel id="toggle-1" [title]="accordionTitle + ' ' + interviewRound">
+      <ng-template ngbPanelContent>
+        <div class="manager-wrapper">
+          <div class="manager" *ngFor="let manager of managerList">
+            <img [src]="manager.avatar" [alt]="manager.avatar" />
+            <div class="detail-wrapper">
+              <div class="date">{{ date }}</div>
+              <div class="name">{{ manager.name }}</div>
+              <!-- RESUME SECTION -->
+              <div *ngIf="isResumeVoted" class="detail">
+                <span class="header">ประเมิน Resume : </span>
+                <span class="score" *ngIf="manager.resumeScore !== 0">
+                  {{ convertToFloat(manager.resumeScore) }}/5.0 คะแนน
+                </span>
+                <span class="passed" *ngIf="manager.isResumePassed === true"
+                  >ผ่าน</span
+                >
+                <span
+                  class="not-passed"
+                  *ngIf="manager.isResumePassed === false"
+                  >ไม่ผ่าน</span
+                >
+              </div>
+              <div
+                *ngIf="isResumeVoted && manager.resumeReview !== ''"
+                class="detail"
+              >
+                <span class="header">รีวิว : </span>
+                <span class="content">{{ manager.resumeReview }}</span>
+              </div>
+              <!-- INTERVIEW SECTION -->
+              <div
+                *ngIf="isInterviewed && isResumeVoted"
+                class="detail"
+                style="margin-top: 15px"
+              >
+                <span class="header">คะแนนสัมภาษณ ์: </span>
+                <span
+                  class="score"
+                  *ngFor="let score of manager.interviewScore; let i = index"
+                >
+                  <span *ngIf="i" style="color: #c7c7cc; margin-right: 10px"
+                    >•</span
+                  >
+                  {{ score.label }} {{ convertToFloat(score.score) }}/5.0 คะแนน
+                </span>
+                <span class="passed" *ngIf="manager.isInterviewPassed === true"
+                  >ผ่าน</span
+                >
+                <span
+                  class="not-passed"
+                  *ngIf="manager.isInterviewPassed === false"
+                  >ไม่ผ่าน</span
+                >
+              </div>
+              <div
+                *ngIf="
+                  isInterviewed &&
+                  isResumeVoted &&
+                  manager.interviewReview !== ''
+                "
+                class="detail"
+              >
+                <span class="header">รีวิว : </span>
+                <span class="content">{{ manager.interviewReview }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+  <!-- TITLE SCORE -->
+  <div *ngIf="isResumeVoted" class="title-score">
+    <img src="assets/icons/star.png" alt="star" />{{
+      convertToFloat(averageScore)
+    }}/5.0
+  </div>
+</div>

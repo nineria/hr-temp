@@ -1,0 +1,26 @@
+<div class="card-container">
+  <div class="btn-wrapper">
+    <button
+      [class]="tabTitle ? 'btn' : 'btn-selected'"
+      (click)="tabTitle = !tabTitle"
+    >
+      รายการที่กำลังดำเนินการ
+    </button>
+    <button
+      [class]="!tabTitle ? 'btn' : 'btn-selected'"
+      (click)="tabTitle = !tabTitle"
+    >
+      รายการที่สิ้นสุด
+    </button>
+  </div>
+  <div class="tab-container">
+    <div *ngIf="tabTitle">
+      <!-- ResumeInprogress -->
+      <app-table tableTitle="รายการ Resume" [table]="tableMockup"></app-table>
+    </div>
+    <div *ngIf="!tabTitle">
+      <!-- ResumeFinished -->
+      <app-table tableTitle="รายการ Resume" [table]="[]"></app-table>
+    </div>
+  </div>
+</div>

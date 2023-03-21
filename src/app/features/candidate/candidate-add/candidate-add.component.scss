@@ -1,0 +1,30 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 450px;
+  margin: 0px auto;
+}
+
+.button-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 20px;
+}
+
+.text-center {
+  text-align: center;
+  font-weight: 600;
+  margin: 0px auto;
+  font-size: 24px;
+}
+
+.model-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 40px;
+}

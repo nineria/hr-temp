@@ -19,7 +19,7 @@
     [alt]="leftIcon"
     [style]="iconSize && 'width: ' + iconSize"
   />
-  <div *ngIf="label" style="margin-left: 10px">
+  <div *ngIf="label" [style]="leftIcon && 'margin-left: 10px'">
     {{ label }}
   </div>
 </button>
@@ -45,7 +45,7 @@
     [alt]="leftIcon"
     [style]="iconSize && 'width: ' + iconSize"
   />
-  <div *ngIf="label" style="margin-left: 10px">
+  <div *ngIf="label" [style]="leftIcon && 'margin-left: 10px'">
     {{ label }}
   </div>
 </button>

@@ -14,13 +14,13 @@
       width="22"
       height="14"
       alt="dropdown-icon"
-      src="assets/icons/dropdown-icon.png"
+      src="assets/icons/dropdown.png"
   /></span>
 
   <!-- Options -->
   <div class="option-wrapper" *ngIf="turnOnOption">
     <div
-      *ngFor="let option of filteredOptions; index as i"
+      *ngFor="let option of filteredOptionList; index as i"
       (click)="isTurnOnOption(option)"
     >
       <div class="options-value">
@@ -30,7 +30,7 @@
   </div>
 </div>
 <label
-  class="error"
+  class="error-reimbursement"
   *ngIf="validationAlert && !inputDropdownValue && detectionTouch"
   >{{ validationAlert }}</label
 >

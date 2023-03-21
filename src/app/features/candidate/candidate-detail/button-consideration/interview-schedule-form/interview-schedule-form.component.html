@@ -1,0 +1,91 @@
+<form id="interview-schedule-form" [formGroup]="form" class="input-container">
+  <div class="input-wrapper">
+    <label for="interviewDate"
+      >วันที่สัมภาษณ์
+      <span *ngIf="getForm['interviewDate'].invalid" class="required">*</span>
+    </label>
+    <input
+      id="interviewDate"
+      placeholder="กรอกชื่อ"
+      type="text"
+      formControlName="interviewDate"
+      class="input"
+      [ngClass]="
+        getForm['interviewDate'].invalid &&
+        (getForm['interviewDate'].touched || getForm['interviewDate'].dirty) &&
+        'invalid'
+      "
+    />
+    <div
+      *ngIf="
+        getForm['interviewDate'].errors &&
+        (getForm['interviewDate'].touched || getForm['interviewDate'].dirty)
+      "
+      class="required"
+    >
+      <div>กรุณากรอกข้อมูล</div>
+    </div>
+  </div>
+
+  <div class="input-wrapper">
+    <label for="interviewTime"
+      >เวลา
+      <span *ngIf="getForm['interviewTime'].invalid" class="required">*</span>
+    </label>
+    <input
+      id="interviewTime"
+      placeholder="กรอกชื่อ"
+      type="text"
+      formControlName="interviewTime"
+      class="input"
+      [ngClass]="
+        getForm['interviewTime'].invalid &&
+        (getForm['interviewTime'].touched || getForm['interviewTime'].dirty) &&
+        'invalid'
+      "
+    />
+    <div
+      *ngIf="
+        getForm['interviewTime'].errors &&
+        (getForm['interviewTime'].touched || getForm['interviewTime'].dirty)
+      "
+      class="required"
+    >
+      <div>กรุณากรอกข้อมูล</div>
+    </div>
+  </div>
+
+  <div class="input-wrapper">
+    <label for="interviewLink"
+      >ลิงก์สัมภาษณ์
+      <span *ngIf="getForm['interviewLink'].invalid" class="required">*</span>
+    </label>
+    <input
+      id="interviewLink"
+      placeholder="กรอกลิงก์สัมภาษณ์"
+      type="text"
+      formControlName="interviewLink"
+      class="input"
+      [ngClass]="
+        getForm['interviewLink'].invalid &&
+        (getForm['interviewLink'].touched || getForm['interviewLink'].dirty) &&
+        'invalid'
+      "
+    />
+    <div
+      *ngIf="
+        getForm['interviewLink'].errors &&
+        (getForm['interviewLink'].touched || getForm['interviewLink'].dirty)
+      "
+      class="required"
+    >
+      <div>กรุณากรอกข้อมูล</div>
+    </div>
+  </div>
+
+  <app-multi-select
+    multiSelectTitle="ผู้รับผิดชอบ"
+    placeholder="เลือกผู้รับผิดชอบ"
+    [list]="[]"
+  ></app-multi-select>
+</form>

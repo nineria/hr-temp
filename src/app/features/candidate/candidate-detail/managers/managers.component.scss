@@ -1,0 +1,98 @@
+.manager-container {
+  position: relative;
+  margin-top: 15px;
+}
+
+.manager-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.manager {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.manager img {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+}
+
+.manager .date {
+  font-size: 12px;
+}
+
+.manager .name {
+  font-size: 16px;
+  color: #005fbc;
+}
+
+.detail {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.detail .score {
+  font-size: 16px;
+  color: #ec920e;
+}
+
+.detail span {
+  color: #000;
+}
+
+.detail .header {
+  min-width: 100px;
+}
+
+.detail .content {
+  font-weight: 600;
+}
+
+.detail .passed {
+  background-color: #63be00;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 15px;
+}
+
+.detail .not-passed {
+  background-color: #ef0303;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 15px;
+}
+
+.detail-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.title-score {
+  position: absolute;
+  top: 15px;
+  left: 150px;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  background-color: #ffefd7;
+  width: fit-content;
+  padding: 2px 8px;
+  border-radius: 10px;
+
+  color: #eb760b;
+  font-weight: 600;
+}
+
+.title-score img {
+  width: 15px;
+  height: 15px;
+}

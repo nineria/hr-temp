@@ -1,0 +1,94 @@
+<app-layout-candidate>
+  <ng-container header>
+    <app-confirm-modal variant="back" leftIcon="/assets/icons/back.png">
+      <ng-container content>
+        <div class="model-content">
+          <div>ยกเลิกการส่งแบบฟอร์ม?</div>
+          <img src="/assets/icons/paper.png" alt="paper.png" width="80px" />
+        </div>
+      </ng-container>
+      <ng-container button>
+        <app-button
+          label="ยืนยัน"
+          rounded="md"
+          variant="submit"
+          routerLink="/main/candidate"
+        >
+        </app-button>
+      </ng-container>
+    </app-confirm-modal>
+    <div class="text-center">{{ formTitle }}</div>
+  </ng-container>
+  <ng-container body>
+    <form class="form-container">
+      <app-input-form [getForm]="getForm" [form]="form"></app-input-form>
+      <app-multi-select
+        multiSelectTitle="แผนกที่สมัคร"
+        placeholder="เลือกแผนกที่สมัคร"
+        [list]="departmentList"
+        (onSubmit)="onSelect($event)"
+      ></app-multi-select>
+      <app-multi-select
+        multiSelectTitle="ตำแหน่ง"
+        placeholder="เลือกตำแหน่ง"
+        [list]="positionList"
+        (onSubmit)="onSelect($event)"
+      ></app-multi-select>
+      <app-multi-select
+        multiSelectTitle="ผู้รับผิดชอบ"
+        placeholder="เลือกผู้รับผิดชอบ"
+        [list]="managerList"
+        (onSubmit)="onSelect($event)"
+      ></app-multi-select>
+      <app-document-upload
+        [getForm]="getForm"
+        (onSelectFileEmit)="onSelectFile($event)"
+      ></app-document-upload>
+      <app-input-other-form
+        header="ข้อมูลเพิ่มเติม หรือ ลิงก์ผลงาน"
+        [form]="form"
+        [getForm]="getForm"
+      ></app-input-other-form>
+    </form>
+  </ng-container>
+  <ng-container footer>
+    <div class="form-container button-container">
+      <app-confirm-modal variant="cancel" buttonLabel="ยกเลิก">
+        <ng-container content>
+          <div class="model-content">
+            <div>ยกเลิกการส่งแบบฟอร์ม?</div>
+            <img src="/assets/icons/paper.png" alt="paper.png" width="80px" />
+          </div>
+        </ng-container>
+        <ng-container button>
+          <app-button
+            label="ยืนยัน"
+            rounded="md"
+            variant="submit"
+            routerLink="/main/candidate"
+          >
+          </app-button>
+        </ng-container>
+      </app-confirm-modal>
+      <app-confirm-modal
+        [form]="form"
+        id="input-group-form"
+        type="submit"
+        buttonLabel="ยืนยัน"
+        variant="submit"
+        (onSubmit)="onFormSubmit()"
+      >
+        <ng-container content>
+          <div class="model-content">
+            <div>ยืนยันการส่งแบบฟอร์ม?</div>
+            <img src="/assets/icons/paper.png" alt="paper.png" width="80px" />
+          </div>
+        </ng-container>
+        <ng-container button>
+          <app-button label="ยืนยัน" rounded="md" variant="submit">
+          </app-button>
+        </ng-container>
+      </app-confirm-modal>
+    </div>
+  </ng-container>
+</app-layout-candidate>

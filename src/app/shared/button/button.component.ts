@@ -20,7 +20,17 @@ export class ButtonComponent implements OnInit {
   id: string = '';
 
   @Input()
-  variant: 'submit' | 'cancel' | 'back' | 'default' = 'default';
+  variant:
+    | 'submit'
+    | 'cancel'
+    | 'back'
+    | 'default'
+    | 'success'
+    | 'danger'
+    | 'orange-outline' = 'default';
+
+  @Input()
+  paddingCustom: string = '';
 
   @Input()
   padding: 'sm' | 'md' | 'lg' = 'md';
@@ -28,7 +38,7 @@ export class ButtonComponent implements OnInit {
   paddingStyle: string = '';
 
   @Input()
-  rounded: 'sm' | 'md' | 'lg' | 'full' = 'sm'; // '10px';
+  rounded: 'sm' | 'md' | 'lg' | 'full' = 'sm';
 
   roundedStyle: string = '';
 
@@ -46,6 +56,7 @@ export class ButtonComponent implements OnInit {
   ngOnInit(): void {
     this.getPaddingStyle(this.padding);
     this.getRoundedStyle(this.rounded);
+    this.getPaddingCustomStyle(this.paddingCustom);
 
     this.isDisable(this.disabled);
   }
@@ -62,6 +73,11 @@ export class ButtonComponent implements OnInit {
         this.paddingStyle = '15px 20px';
         break;
     }
+  }
+
+  getPaddingCustomStyle(option: any) {
+    if (option === '') return;
+    this.paddingStyle = option;
   }
 
   getRoundedStyle(option: any) {
