@@ -1,5 +1,5 @@
 <div class="multi-select-container">
-  <div class="header">
+  <div *ngIf="multiSelectTitle" class="header">
     {{ multiSelectTitle }}
     <span *ngIf="selectedList.length === 0" class="required">*</span>
   </div>

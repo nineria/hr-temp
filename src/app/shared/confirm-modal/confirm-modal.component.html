@@ -26,6 +26,7 @@
   [paddingCustom]="paddingCustom"
   padding="md"
   [iconSize]="iconSize"
+  [rounded]="rounded"
   [disabled]="(form && form.invalid) || (disable && disable)"
-  (click)="form && form.invalid ? null : open()"
+  (click)="(form && form.invalid) || (disable && disable) ? null : open()"
 ></app-button>

@@ -46,6 +46,12 @@
   color: #fff;
 }
 
+.danger-outline {
+  background-color: #fff;
+  color: #db0000;
+  border: 1px solid #db0000;
+}
+
 .orange-outline {
   background-color: #fff;
   border: 1px solid #ec920e;
@@ -67,8 +73,40 @@
   cursor: pointer;
 }
 
+.none {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+
+  border: none;
+
+  background-color: #fff;
+
+  cursor: pointer;
+}
+
+.none-outline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid #d1d1d6;
+  background-color: #fff;
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.none:hover {
+  background-color: #eee;
+}
+
 .cancel:active,
-.orange-outline:active {
+.orange-outline:active,
+.none:active,
+.none-outline:active,
+.danger-outline:active {
   background-color: #eee;
 }
 

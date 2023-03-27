@@ -40,8 +40,14 @@ export class ConfirmModalComponent {
     | 'back'
     | 'default'
     | 'danger'
+    | 'danger-outline'
     | 'success'
-    | 'orange-outline' = 'default';
+    | 'orange-outline'
+    | 'none'
+    | 'none-outline' = 'default';
+
+  @Input()
+  rounded: 'none' | 'sm' | 'md' | 'lg' | 'full' = 'sm';
 
   @Input()
   leftIcon: string = '';

@@ -27,7 +27,10 @@ export class ButtonComponent implements OnInit {
     | 'default'
     | 'success'
     | 'danger'
-    | 'orange-outline' = 'default';
+    | 'danger-outline'
+    | 'orange-outline'
+    | 'none'
+    | 'none-outline' = 'default';
 
   @Input()
   paddingCustom: string = '';
@@ -38,7 +41,7 @@ export class ButtonComponent implements OnInit {
   paddingStyle: string = '';
 
   @Input()
-  rounded: 'sm' | 'md' | 'lg' | 'full' = 'sm';
+  rounded: 'none' | 'sm' | 'md' | 'lg' | 'full' = 'sm';
 
   roundedStyle: string = '';
 
@@ -82,6 +85,9 @@ export class ButtonComponent implements OnInit {
 
   getRoundedStyle(option: any) {
     switch (option) {
+      case 'none':
+        this.roundedStyle = '0px';
+        break;
       case 'sm':
         this.roundedStyle = '8px';
         break;
