@@ -1,16 +1,17 @@
 <div class="date-picker-container">
-  <label for="date-picker-input">{{ label }}</label>
+  <label for="date-picker-input" *ngIf="label !== ''">{{ label }}</label>
   <div class="date-picker-input-wrapper">
     <input
       id="date-picker-input"
       type="text"
       class="date-picker-input"
+      readonly
       [placeholder]="placeholder"
       [(ngModel)]="selectedDateTH"
       (click)="onDatePickerPopup()"
     />
 
-    <button (click)="onDatePickerPopup()">
+    <button type="button" (click)="onDatePickerPopup()">
       <img
         src="assets/icons/date-picker.png"
         alt="assets/icons/date-picker.png"

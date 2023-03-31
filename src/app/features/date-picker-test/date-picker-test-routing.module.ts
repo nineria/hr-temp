@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DatePickerComponent } from './date-picker/date-picker.component';
+import { DatePickerTestComponent } from './date-picker-test/date-picker-test.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: DatePickerComponent,
+    component: DatePickerTestComponent,
   },
 ];
 
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class DatePickerRoutingModule {}
+export class DatePickerTestRoutingModule {}

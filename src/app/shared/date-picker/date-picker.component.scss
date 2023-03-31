@@ -7,7 +7,7 @@
   margin-bottom: 5px;
 
   font-family: "Kanit";
-  font-weight: 500;
+  font-weight: 600;
   font-size: 14px;
 }
 
@@ -23,6 +23,8 @@
   position: absolute;
   top: 55px;
   right: 0;
+  z-index: 999;
+
   max-width: 400px;
   background: #fff;
   border-radius: 10px;

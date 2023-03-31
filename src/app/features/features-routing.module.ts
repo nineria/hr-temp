@@ -15,8 +15,8 @@ const routes: Routes = [
   {
     path: 'date-picker',
     loadChildren: () =>
-      import('./date-picker/date-picker.module').then(
-        (m) => m.DatePickerModule
+      import('./date-picker-test/date-picker-test.module').then(
+        (m) => m.DatePickerTestModule
       ),
   },
 ];

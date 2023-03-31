@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { getMonthDetailsConfig } from 'src/app/core/configs/calendar';
 import { MonthDetailType } from 'src/app/core/interfaces/I-calendar';
 
@@ -7,7 +7,7 @@ import { MonthDetailType } from 'src/app/core/interfaces/I-calendar';
   templateUrl: './date-picker.component.html',
   styleUrls: ['./date-picker.component.scss'],
 })
-export class DatepickerComponent implements OnInit {
+export class DatePickerComponent implements OnInit {
   toggleMonthSelect: boolean = false;
   toggleYearSelect: boolean = false;
 
@@ -42,15 +42,21 @@ export class DatepickerComponent implements OnInit {
   datePickerActive: boolean = false;
 
   @Input()
-  label: string = 'วันที่สัมภาษณ์';
+  label: string = '';
 
   @Input()
-  placeholder: string = 'เลือกวันที่';
+  placeholder: string = '';
+
+  @Input()
+  defaultDate: string = '';
+
+  @Output() onSelectedDate = new EventEmitter<string>();
 
   constructor() {}
 
   ngOnInit() {
     this.getInitialMonth();
+    this.getInitialDate();
   }
 
   getInitialMonth() {
@@ -60,6 +66,19 @@ export class DatepickerComponent implements OnInit {
     this.month = date.getMonth();
     const { monthArray } = getMonthDetailsConfig(this.year, this.month);
     this.monthDetailList = monthArray;
+  }
+
+  getInitialDate() {
+    if (this.defaultDate === '') return;
+    this.defaultDate;
+
+    const date = new Date(this.defaultDate);
+    this.selectedDateTH = date.toLocaleDateString('th-TH', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    });
+    this.onSelectedDate.emit(this.selectedDate);
   }
 
   onDatePickerPopup() {
@@ -116,6 +135,7 @@ export class DatepickerComponent implements OnInit {
       month: '2-digit',
       day: '2-digit',
     });
+    this.onSelectedDate.emit(this.selectedDate);
   };
 
   createYearRange(currentYear: number, yearRange: number = 500) {
