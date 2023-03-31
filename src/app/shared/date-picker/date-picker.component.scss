@@ -1,0 +1,370 @@
+.date-picker-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.date-picker-container label {
+  margin-bottom: 5px;
+
+  font-family: "Kanit";
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.datePicker-active {
+  display: block;
+}
+
+.datePicker-not-active {
+  display: none;
+}
+
+.date-picker-dropdown-container {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  max-width: 400px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #005fbc;
+  padding: 16px;
+}
+
+.close-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.close-button img {
+  background-color: #ff5444;
+  border-radius: 4px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.close-button img:hover {
+  opacity: 90%;
+}
+
+.calendar-control-wrapper {
+  width: 100%;
+  height: 53px;
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navigate-button-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.navigate-button {
+  user-select: none;
+  cursor: pointer;
+}
+
+.calendar-control {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-icon {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  font-size: 12px;
+  color: #005fbc;
+  opacity: 0.6;
+}
+
+.calendar-month,
+.calendar-year {
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 36px;
+  color: #1c1c1e;
+  text-align: center;
+
+  border: 1px solid #005fbc;
+  border-radius: 10px;
+
+  width: 140px;
+
+  padding: 6px 15px;
+}
+
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.head-month,
+.day-name,
+.day-container,
+.day-number-month span,
+.day-wrapper {
+  position: relative;
+  display: block;
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.head-month {
+  height: 30px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.day-name {
+  width: 14.285%;
+  height: 30px;
+  line-height: 30px;
+  font-weight: 700;
+  color: #595959;
+  font-size: 14px;
+  text-align: center;
+}
+
+.day-container {
+  height: 200px;
+  width: 100%;
+}
+
+.day-wrapper {
+  width: 14.285%;
+  height: 17.6666%;
+}
+
+.day-number-month {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.day-number-month span {
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  margin-left: -15px;
+  left: 50%;
+  top: 50%;
+  color: #595959;
+  font-weight: 400;
+  border-radius: 100%;
+  line-height: 30px;
+}
+
+.wrapper-leave {
+  display: flex;
+  position: absolute;
+  bottom: -5px;
+  margin-left: 12px;
+}
+
+.wrapper-dot > span {
+  margin-left: -4px;
+  margin-top: -10px;
+}
+
+.business-leave {
+  left: -10px;
+  height: 8px;
+  width: 8px;
+  background-color: #005fbc;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.sick-leave {
+  left: -10px;
+  height: 8px;
+  width: 8px;
+  background-color: #ef0303;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.summer-leave {
+  left: -10px;
+  height: 8px;
+  width: 8px;
+  background-color: #eb760b;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.other-leave {
+  left: -10px;
+  height: 8px;
+  width: 8px;
+  background-color: #239411;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.day-wrapper.disabled {
+  pointer-events: none;
+}
+
+.day-wrapper.disabled .day-number-month span {
+  color: #ddd;
+  background: #fff !important;
+}
+
+.toggle-select {
+  position: absolute;
+  z-index: 99;
+  top: 50px;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid #005fbc;
+  border-radius: 10px;
+
+  width: 140px;
+  max-height: 500px;
+
+  background: #fff;
+  box-shadow: 10px 10px 40px rgb(0 0 0 / 20%);
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.toggle-select div {
+  cursor: pointer;
+  color: #1c1c1e;
+  padding-left: 14px;
+
+  width: 100%;
+  line-height: 48px;
+  height: 48px;
+
+  text-align: left;
+}
+
+.toggle-select div:hover {
+  cursor: pointer;
+  color: #1c1c1e;
+  background-color: #ccc;
+}
+
+.close-month-select {
+  position: absolute;
+  top: 8px;
+  right: 20px;
+  color: #005fbc;
+  cursor: pointer;
+}
+
+.sunday-color {
+  color: #ff5444;
+}
+
+.currentDay {
+  border-radius: 100%;
+  color: #ff5444;
+}
+
+/* Hover */
+
+.calendar-icon:hover {
+  color: #005fbc;
+  opacity: 1;
+}
+
+.day-number-month span:hover {
+  cursor: pointer;
+  color: #005fbc;
+}
+
+.day-number-month-active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 2px;
+}
+
+.day-number-month-active span {
+  font-weight: 400;
+
+  color: #fff;
+  background: linear-gradient(90deg, #e69755 0.1%, #ff5444 100.01%);
+  border-radius: 50%;
+
+  width: 30px;
+  height: 30px;
+
+  text-align: center;
+  line-height: 30px;
+
+  cursor: default;
+}
+
+.date-picker-input-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+
+  height: 48px;
+}
+
+.date-picker-input {
+  font-family: "Kanit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+
+  border-left: 1px solid #005fbc;
+  border-right: transparent;
+  border-top: 1px solid #005fbc;
+  border-bottom: 1px solid #005fbc;
+
+  text-indent: 10px;
+
+  outline: none;
+
+  width: 100%;
+}
+
+.date-picker-input-wrapper button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #005fbc;
+  border: none;
+  outline: none;
+
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+
+  width: 56px;
+}
+
+.date-picker-input-wrapper button img {
+  width: 20px;
+}

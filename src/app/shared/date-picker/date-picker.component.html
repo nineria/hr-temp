@@ -1,0 +1,127 @@
+<div class="date-picker-container">
+  <label for="date-picker-input">{{ label }}</label>
+  <div class="date-picker-input-wrapper">
+    <input
+      id="date-picker-input"
+      type="text"
+      class="date-picker-input"
+      [placeholder]="placeholder"
+      [(ngModel)]="selectedDateTH"
+      (click)="onDatePickerPopup()"
+    />
+
+    <button (click)="onDatePickerPopup()">
+      <img
+        src="assets/icons/date-picker.png"
+        alt="assets/icons/date-picker.png"
+      />
+    </button>
+    <!-- DATE PICKER DROPDOWN -->
+    <div
+      [ngClass]="
+        datePickerActive ? 'datePicker-active' : 'datePicker-not-active'
+      "
+    >
+      <div class="date-picker-dropdown-container">
+        <div class="close-button">
+          <img
+            (click)="onDatePickerPopup()"
+            src="assets/icons/x.png"
+            alt="assets/icons/x.png"
+            width="24px"
+          />
+        </div>
+        <div class="calendar-control-wrapper">
+          <div class="calendar-control">
+            <div>{{ getMonthStr(this.month) }}</div>
+            <div class="calendar-month" (click)="onMonthToggle()">
+              {{ monthSelected }}
+              <img
+                src="assets/icons/arrow-down-red.png"
+                alt="assets/icons/arrow-down-red.png"
+                width="20px"
+              />
+              <div *ngIf="this.toggleMonthSelect" class="toggle-select">
+                <div *ngFor="let month of MONTH_LIST; let i = index">
+                  <span (click)="selectMonth(i)">{{ month }}</span>
+                </div>
+              </div>
+            </div>
+            <div class="calendar-year" (click)="onYearToggle()">
+              {{ year + 543 }}
+              <img
+                src="assets/icons/arrow-down-red.png"
+                alt="assets/icons/arrow-down-red.png"
+                width="20px"
+              />
+              <div *ngIf="this.toggleYearSelect" class="toggle-select">
+                <div
+                  *ngFor="
+                    let year of createYearRange(currentYear);
+                    let i = index
+                  "
+                  (click)="selectYear(year)"
+                >
+                  <span>{{ year + 543 }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ARROWs -->
+          <div class="navigate-button-wrapper">
+            <div class="navigate-button" (click)="setMonth(-1)">
+              <img
+                src="assets/icons/arrow-down-red.png"
+                alt="assets/icons/arrow-down-red.png"
+                width="20px"
+                style="rotate: 90deg"
+              />
+            </div>
+            <div class="navigate-button" (click)="setMonth(1)">
+              <img
+                src="assets/icons/arrow-down-red.png"
+                alt="assets/icons/arrow-down-red.png"
+                width="20px"
+                style="rotate: -90deg"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- CALENDAR -->
+        <!-- HEADER -->
+        <div class="calendar-container">
+          <div class="head-month">
+            <div
+              class="day-name"
+              [ngClass]="i === 0 ? 'sunday-color' : ''"
+              *ngFor="
+                let day of ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+                let i = index
+              "
+            >
+              {{ day }}
+            </div>
+          </div>
+          <!-- BODY -->
+          <div class="day-container">
+            <div
+              *ngFor="let day of monthDetailList; let i = index"
+              class="day-wrapper"
+              [ngClass]="day.month !== 0 ? 'disabled' : ''"
+            >
+              <div
+                [ngClass]="
+                  selectedDate === day.dateTimeStr
+                    ? 'day-number-month-active'
+                    : 'day-number-month'
+                "
+              >
+                <span (click)="onDateClick(day)">{{ day.date }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -5,12 +5,19 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'candidate',
+    redirectTo: 'date-picker',
   },
   {
     path: 'candidate',
     loadChildren: () =>
       import('./candidate/candidate.module').then((m) => m.CandidateModule),
+  },
+  {
+    path: 'date-picker',
+    loadChildren: () =>
+      import('./date-picker/date-picker.module').then(
+        (m) => m.DatePickerModule
+      ),
   },
 ];
 

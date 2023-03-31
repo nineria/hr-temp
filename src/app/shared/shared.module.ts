@@ -12,6 +12,7 @@ import { TypographyHeaderInputComponent } from './typography-header-input/typogr
 import { RouterModule } from '@angular/router';
 import { StarRatingComponent } from './star-rating/star-rating.component';
 import { NgxStarsModule } from 'ngx-stars';
+import { DatepickerComponent } from './date-picker/date-picker.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { NgxStarsModule } from 'ngx-stars';
     DropdownsComponent,
     TypographyHeaderInputComponent,
     StarRatingComponent,
+    DatepickerComponent,
   ],
   imports: [
     CommonModule,
@@ -40,6 +42,7 @@ import { NgxStarsModule } from 'ngx-stars';
     DropdownsComponent,
     TypographyHeaderInputComponent,
     StarRatingComponent,
+    DatepickerComponent,
   ],
 })
 export class SharedModule {}
