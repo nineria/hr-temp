@@ -1,5 +1,5 @@
 <div class="multi-select-container">
-  <div *ngIf="multiSelectTitle" class="header">
+  <div *ngIf="multiSelectTitle !== ''" class="header">
     {{ multiSelectTitle }}
     <span *ngIf="selectedList.length === 0" class="required">*</span>
   </div>
@@ -9,7 +9,6 @@
       [(ngModel)]="searchText"
       type="text"
       [placeholder]="placeholder"
-      class="multiselect-input"
       [ngClass]="empty ? 'invalid' : ''"
     />
     <button (click)="onShowAll($event)">

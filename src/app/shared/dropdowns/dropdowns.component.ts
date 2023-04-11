@@ -1,18 +1,23 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
+interface ProjectType {
+  id: number | null;
+  name: string | null;
+}
 @Component({
   selector: 'app-dropdowns',
   templateUrl: './dropdowns.component.html',
   styleUrls: ['./dropdowns.component.scss'],
 })
 export class DropdownsComponent implements OnInit {
-  @Input() dropdownOptionList: string[] = [];
+  @Input() dropdownOptionList: any[] = [];
+  @Input() dropdownTitle?: string;
   @Input() placeholderVal: string = '';
   @Input() validationAlert: string | undefined = '';
   @Input() inputDropdownValue?: string | null | any = '';
   @Output() optionChosenEvent = new EventEmitter<string | null | object>();
 
-  filteredOptionList: string[] = [];
+  filteredOptionList: any[] = [];
   detectionTouch: boolean = false;
   turnOnOption: boolean = false;
 
@@ -20,7 +25,6 @@ export class DropdownsComponent implements OnInit {
 
   ngOnInit() {
     this.isDefaultValue();
-    this.filteredOptionList = this.dropdownOptionList;
   }
 
   isDefaultValue() {
@@ -29,24 +33,25 @@ export class DropdownsComponent implements OnInit {
     );
   }
 
-  isTurnOnOption(optionValue: string | null) {
+  isTurnOnOptionAndChoose(optionValue: ProjectType | null) {
+    this.filteredOptionList = this.dropdownOptionList;
+
     this.turnOnOption = !this.turnOnOption;
     this.checkConditionError();
     if (!optionValue) return;
     this.optionChosenEvent.emit(
       this.setValueBeforeSend(optionValue, this.detectionTouch)
     );
-    this.inputDropdownValue = optionValue;
+    this.inputDropdownValue = optionValue.name;
     this.filteredOptionList = this.dropdownOptionList;
   }
 
   onInputChange(e: any) {
-    console.log('indexL');
     this.turnOnOption = true;
     this.checkConditionError();
     this.inputDropdownValue = e.target.value;
-    console.log('asd', e.target.value);
-    this.filteredOptionList = this.searchFromArray(e.target.value);
+
+    this.searchFromArray(e.target.value);
     this.optionChosenEvent.emit(
       this.setValueBeforeSend(this.inputDropdownValue, this.detectionTouch)
     );
@@ -63,19 +68,16 @@ export class DropdownsComponent implements OnInit {
   }
 
   searchFromArray(value: string) {
-    this.filteredOptionList = this.dropdownOptionList;
-    let matches = [],
-      i;
-    for (i = 0; i < this.filteredOptionList.length; i++) {
-      if (this.filteredOptionList[i].match(value)) {
-        matches.push(this.filteredOptionList[i]);
-      }
+    if (value == '') {
+      this.filteredOptionList = [];
+      return;
     }
-
-    return matches.length > 0 ? matches : this.checkFilteredCondition();
+    this.filteredOptionList = this.dropdownOptionList.filter((member) =>
+      member.name.toLocaleLowerCase().includes(value.toLocaleLowerCase())
+    );
   }
 
-  setValueBeforeSend(value: string | null, validation: boolean) {
+  setValueBeforeSend(value: ProjectType, validation: boolean) {
     const objectInputValue = {
       value: value,
       validate: validation,
